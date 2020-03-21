@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card'
 
 import "./style.css"
 
-
 function RestaurantCard(props) {
   return (
     <div>

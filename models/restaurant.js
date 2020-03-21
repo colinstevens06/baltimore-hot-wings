@@ -1,6 +1,36 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const dealSchema = new Schema({
+  day: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: String,
+    required: true
+  },
+  count: {
+    type: String,
+    required: true
+  },
+  isSpecial: {
+    type: Boolean,
+    default: false
+  }
+})
+
+const hoursSchema = new Schema({
+  day: {
+    type: String,
+    required: true
+  },
+  time: {
+    type: String,
+  }
+
+})
+
 const restaurantSchema = new Schema({
   name: {
     type: String,
@@ -29,146 +59,15 @@ const restaurantSchema = new Schema({
       type: String,
       required: true
     },
-    hours: {
-      Monday: {
-        type: String,
-      },
-      Tuesday: {
-        type: String,
-      },
-      Wednesday: {
-        type: String,
-      },
-      Thursday: {
-        type: String,
-      },
-      Friday: {
-        type: String,
-      },
-      Saturday: {
-        type: String,
-      },
-      Sunday: {
-        type: String,
-      }
-    }
+    hours:
+      [hoursSchema]
   },
-  wings: {
-    Monday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Monday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Tuesday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Wednesday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Thursday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Friday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Saturday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-    Sunday: {
-      price: {
-        type: Number,
-        required: true,
-      },
-      count: {
-        type: Number,
-        required: true,
-      },
-      isSpecial: {
-        type: Boolean,
-        default: false
-      }
-    },
-  }
+  wings: [
+    dealSchema
+  ]
 
 });
+
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 
