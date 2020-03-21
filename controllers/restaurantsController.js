@@ -8,6 +8,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findById: function (req, res) {
+    db.Restaurant
+      .find(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
   remove: function (req, res) {
     db.Restaurant
       .findById({ _id: req.params.id })
