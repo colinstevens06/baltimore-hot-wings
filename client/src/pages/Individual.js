@@ -19,7 +19,7 @@ function IndividualPage(props) {
   return (
     <div>
       <Container>
-        <h1>Hi</h1>
+        <h1>Hi, welcome to {restaurant.name}</h1>
         {console.log(restaurant)}
 
       </Container>

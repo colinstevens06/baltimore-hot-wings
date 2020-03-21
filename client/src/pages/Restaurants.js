@@ -66,12 +66,8 @@ function RestaurantPage(props) {
         <CardWrapper>
           {todaysRestaurant.map(store => (
             <RestaurantCard
-<<<<<<< Updated upstream
               key={store.id}
-=======
-              key={store._id}
-              id={store._id}
->>>>>>> Stashed changes
+              id={store.id}
               name={store.name}
               neighborhood={store.neighborhood}
               hours={store.hours}
