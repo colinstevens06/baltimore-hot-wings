@@ -12,6 +12,10 @@
   text-align: center;
 } 
 
+.isSpecial {
+  background-image: radial-gradient(farthest-corner at 10px 10px, #3f75d8, #1c53b9);
+}
+
 .card > .content {
   padding-left: 1rem;
   padding-right: 1rem;

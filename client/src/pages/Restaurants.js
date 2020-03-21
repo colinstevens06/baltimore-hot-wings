@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API.js";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // layout features
 import Container from 'react-bootstrap/Container';
@@ -42,8 +42,9 @@ function RestaurantPage(props) {
               name={store.name}
               neighborhood={store.location.city.neighborhood}
               hours={store.location.hours.Monday}
-            // price={}
-
+              price={store.wings.Monday.price}
+              count={store.wings.Monday.count}
+              isSpecial={store.wings.Monday.isSpecial}
 
             />
           ))}

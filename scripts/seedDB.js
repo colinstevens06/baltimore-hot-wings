@@ -61,13 +61,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 10, count: 10 },
-      Tuesday: { price: 10, count: 10 },
+      Monday: { price: 10, count: 10, isSpecial: false },
+      Tuesday: { price: 10, count: 10, isSpecial: false },
       Wednesday: { price: 5, count: 10, isSpecial: true },
-      Thursday: { price: 10, count: 10 },
-      Friday: { price: 10, count: 10 },
-      Saturday: { price: 10, count: 10 },
-      Sunday: { price: 10, count: 10 }
+      Thursday: { price: 10, count: 10, isSpecial: false },
+      Friday: { price: 10, count: 10, isSpecial: false },
+      Saturday: { price: 10, count: 10, isSpecial: false },
+      Sunday: { price: 10, count: 10, isSpecial: false }
     }
 
   },
@@ -92,13 +92,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 8.75, count: 10 },
-      Tuesday: { price: 8.75, count: 10 },
+      Monday: { price: 8.75, count: 10, isSpecial: false },
+      Tuesday: { price: 8.75, count: 10, isSpecial: false },
       Wednesday: { price: 7, count: 10, isSpecial: true },
-      Thursday: { price: 8.75, count: 10 },
-      Friday: { price: 8.75, count: 10 },
-      Saturday: { price: 8.75, count: 10 },
-      Sunday: { price: 8.75, count: 10 }
+      Thursday: { price: 8.75, count: 10, isSpecial: false },
+      Friday: { price: 8.75, count: 10, isSpecial: false },
+      Saturday: { price: 8.75, count: 10, isSpecial: false },
+      Sunday: { price: 8.75, count: 10, isSpecial: false }
     }
 
   },
@@ -124,12 +124,12 @@ const restaurantSeed = [
     },
     wings: {
       Monday: { price: 6, count: 10, isSpecial: true },
-      Tuesday: { price: 7.99, count: 10 },
-      Wednesday: { price: 7.99, count: 10 },
-      Thursday: { price: 7.99, count: 10 },
-      Friday: { price: 7.99, count: 10 },
-      Saturday: { price: 7.99, count: 10 },
-      Sunday: { price: 7.99, count: 10 }
+      Tuesday: { price: 7.99, count: 10, isSpecial: false },
+      Wednesday: { price: 7.99, count: 10, isSpecial: false },
+      Thursday: { price: 7.99, count: 10, isSpecial: false },
+      Friday: { price: 7.99, count: 10, isSpecial: false },
+      Saturday: { price: 7.99, count: 10, isSpecial: false },
+      Sunday: { price: 7.99, count: 10, isSpecial: false }
     }
 
   },
@@ -154,13 +154,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 12, count: 10 },
+      Monday: { price: 12, count: 10, isSpecial: false },
       Tuesday: { price: 5, count: 10, isSpecial: true },
-      Wednesday: { price: 12, count: 10 },
-      Thursday: { price: 12, count: 10 },
-      Friday: { price: 12, count: 10 },
-      Saturday: { price: 12, count: 10 },
-      Sunday: { price: 12, count: 10 }
+      Wednesday: { price: 12, count: 10, isSpecial: false },
+      Thursday: { price: 12, count: 10, isSpecial: false },
+      Friday: { price: 12, count: 10, isSpecial: false },
+      Saturday: { price: 12, count: 10, isSpecial: false },
+      Sunday: { price: 12, count: 10, isSpecial: false }
     }
 
   },
@@ -186,12 +186,12 @@ const restaurantSeed = [
     },
     wings: {
       Monday: { price: 5, count: 10, isSpecial: true },
-      Tuesday: { price: 10, count: 10 },
-      Wednesday: { price: 10, count: 10 },
-      Thursday: { price: 10, count: 10 },
-      Friday: { price: 10, count: 10 },
-      Saturday: { price: 10, count: 10 },
-      Sunday: { price: 10, count: 10 }
+      Tuesday: { price: 10, count: 10, isSpecial: false },
+      Wednesday: { price: 10, count: 10, isSpecial: false },
+      Thursday: { price: 10, count: 10, isSpecial: false },
+      Friday: { price: 10, count: 10, isSpecial: false },
+      Saturday: { price: 10, count: 10, isSpecial: false },
+      Sunday: { price: 10, count: 10, isSpecial: false }
     }
 
   },
@@ -216,13 +216,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 11.95, count: 10 },
-      Tuesday: { price: 11.95, count: 10 },
-      Wednesday: { price: 11.95, count: 10 },
+      Monday: { price: 11.95, count: 10, isSpecial: false },
+      Tuesday: { price: 11.95, count: 10, isSpecial: false },
+      Wednesday: { price: 11.95, count: 10, isSpecial: false },
       Thursday: { price: 8, count: 10, isSpecial: true },
-      Friday: { price: 11.95, count: 10 },
-      Saturday: { price: 11.95, count: 10 },
-      Sunday: { price: 11.95, count: 10 }
+      Friday: { price: 11.95, count: 10, isSpecial: false },
+      Saturday: { price: 11.95, count: 10, isSpecial: false },
+      Sunday: { price: 11.95, count: 10, isSpecial: false }
     }
   },
   {
@@ -247,12 +247,12 @@ const restaurantSeed = [
     },
     wings: {
       Monday: { price: 7.50, count: 10, isSpecial: true },
-      Tuesday: { price: 14, count: 10 },
-      Wednesday: { price: 14, count: 10 },
-      Thursday: { price: 14, count: 10 },
-      Friday: { price: 14, count: 10 },
-      Saturday: { price: 14, count: 10 },
-      Sunday: { price: 14, count: 10 }
+      Tuesday: { price: 14, count: 10, isSpecial: false },
+      Wednesday: { price: 14, count: 10, isSpecial: false },
+      Thursday: { price: 14, count: 10, isSpecial: false },
+      Friday: { price: 14, count: 10, isSpecial: false },
+      Saturday: { price: 14, count: 10, isSpecial: false },
+      Sunday: { price: 14, count: 10, isSpecial: false }
     }
   },
   {
@@ -276,13 +276,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 11, count: 10 },
-      Tuesday: { price: 11, count: 10 },
+      Monday: { price: 11, count: 10, isSpecial: false },
+      Tuesday: { price: 11, count: 10, isSpecial: false },
       Wednesday: { price: 5, count: 10, isSpecial: true },
-      Thursday: { price: 11, count: 10 },
-      Friday: { price: 11, count: 10 },
-      Saturday: { price: 11, count: 10 },
-      Sunday: { price: 11, count: 10 }
+      Thursday: { price: 11, count: 10, isSpecial: false },
+      Friday: { price: 11, count: 10, isSpecial: false },
+      Saturday: { price: 11, count: 10, isSpecial: false },
+      Sunday: { price: 11, count: 10, isSpecial: false }
     }
 
   },
@@ -307,13 +307,13 @@ const restaurantSeed = [
       }
     },
     wings: {
-      Monday: { price: 11, count: 10 },
+      Monday: { price: 11, count: 10, isSpecial: false },
       Tuesday: { price: 7.50, count: 10, isSpecial: true },
-      Wednesday: { price: 11, count: 10 },
-      Thursday: { price: 11, count: 10 },
-      Friday: { price: 11, count: 10 },
-      Saturday: { price: 11, count: 10 },
-      Sunday: { price: 11, count: 10 }
+      Wednesday: { price: 11, count: 10, isSpecial: false },
+      Thursday: { price: 11, count: 10, isSpecial: false },
+      Friday: { price: 11, count: 10, isSpecial: false },
+      Saturday: { price: 11, count: 10, isSpecial: false },
+      Sunday: { price: 11, count: 10, isSpecial: false }
     }
   },
 ];
