@@ -1,0 +1,8 @@
+.table-wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: row wrap;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}

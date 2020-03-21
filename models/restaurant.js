@@ -51,7 +51,6 @@ const restaurantSchema = new Schema({
       Sunday: {
         type: String,
       }
-
     }
   },
   wings: {
