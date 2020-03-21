@@ -15,58 +15,69 @@ function RestaurantPage(props) {
   // United STATES
   const [restaurants, setRestaurants] = useState([])
 
-  const [todaysRestaurant, setTodaysRestaurant] = useState({})
+  const [todaysRestaurant, setTodaysRestaurant] = useState([])
 
   // initializing with the data from the db
   useEffect(() => {
 
-    getTodaysInfo()
     getRestaurantsDB()
+    // getTodaysInfo()
   }, [])
 
   // hits the DB via the API to get all the restaurants info, then initialize
   const getRestaurantsDB = () => {
     API.getRestaurants()
       .then(res => {
-        console.log("Front-end hit")
-        console.log(res.data)
+        let stores = res.data
         setRestaurants(res.data)
-        console.log(restaurants)
+
+        const today = new Date().getDay()
+        console.log("STORES")
+        console.log(stores)
+
+        let todaysInfo = []
+
+        for (let i = 0; i < stores.length; i++) {
+          let storeInfo = {
+            "id": stores[i]._id,
+            "name": stores[i].name,
+            "neighborhood": stores[i].location.city.neighborhood,
+            "hours": stores[i].location.hours[today].time,
+            "price": stores[i].wings[today].price,
+            "count": stores[i].wings[today].count,
+            "isSpecial": stores[i].wings[today].isSpecial
+          }
+
+          todaysInfo.push(storeInfo)
+
+          console.log("TODAY TODAY TODAY")
+          console.log(todaysInfo)
+        }
+
+        setTodaysRestaurant(todaysInfo)
       })
       .catch(err => console.log(err))
   }
-
-  // get the information for all the restaurants, sorted for today
-  const getTodaysInfo = () => {
-    const today = new Date().getDay()
-    console.log(today)
-
-
-
-  }
-
-
-
-
 
   return (
     <div>
       <Container>
         <HeroLanding />
         <CardWrapper>
-          {restaurants.map(store => (
+          {todaysRestaurant.map(store => (
             <RestaurantCard
-              key={store._id}
+              key={store.id}
               name={store.name}
-              neighborhood={store.location.city.neighborhood}
-              hours={store.location.hours.Monday}
-              price={store.wings[0].price}
-              count={store.wings[0].count}
-              isSpecial={store.wings[0].isSpecial}
+              neighborhood={store.neighborhood}
+              hours={store.hours}
+              price={store.price}
+              count={store.count}
+              isSpecial={store.isSpecial}
 
             />
           ))}
         </CardWrapper>
+
       </Container>
     </div>
   );
