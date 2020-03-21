@@ -19,25 +19,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21224",
-      hours: {
-        Monday: "4pm-2am",
-        Tuesday: "4pm-2am",
-        Wednesday: "4pm-2am",
-        Thursday: "4pm-2am",
-        Friday: "4pm-2am",
-        Saturday: "10am-2am",
-        Sunday: "10am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "4pm-2am" },
+        { day: "Tuesday", time: "4pm-2am" },
+        { day: "Wednesday", time: "4pm-2am" },
+        { day: "Thursday", time: "4pm-2am" },
+        { day: "Friday", time: "4pm-2am" },
+        { day: "Saturday", time: "10am-2am" },
+        { day: "Sunday", time: "10am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 12, count: 12 },
-      Tuesday: { price: 12, count: 12 },
-      Wednesday: { price: 12, count: 12 },
-      Thursday: { price: 12, count: 12 },
-      Friday: { price: 12, count: 12 },
-      Saturday: { price: 12, count: 12 },
-      Sunday: { price: 12, count: 12 },
-    }
+    wings:
+      [{ day: "Monday", price: 12, count: 12 },
+      { day: "Tuesday", price: 12, count: 12 },
+      { day: "Wednesday", price: 12, count: 12 },
+      { day: "Thursday", price: 12, count: 12 },
+      { day: "Friday", price: 12, count: 12 },
+      { day: "Saturday", price: 12, count: 12 },
+      { day: "Sunday", price: 12, count: 12 }]
+
 
   },
   {
@@ -50,25 +50,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21224",
-      hours: {
-        Monday: "3pm-2am",
-        Tuesday: "3pm-2am",
-        Wednesday: "3pm-2am",
-        Thursday: "3pm-2am",
-        Friday: "12pm-2am",
-        Saturday: "12am-2am",
-        Sunday: "12am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "3pm-2am" },
+        { day: "Tuesday", time: "3pm-2am" },
+        { day: "Wednesday", time: "3pm-2am", },
+        { day: "Thursday", time: "3pm-2am", },
+        { day: "Friday", time: "12pm-2am", },
+        { day: "Saturday", time: "12am-2am", },
+        { day: "Sunday", time: "12am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 10, count: 10, isSpecial: false },
-      Tuesday: { price: 10, count: 10, isSpecial: false },
-      Wednesday: { price: 5, count: 10, isSpecial: true },
-      Thursday: { price: 10, count: 10, isSpecial: false },
-      Friday: { price: 10, count: 10, isSpecial: false },
-      Saturday: { price: 10, count: 10, isSpecial: false },
-      Sunday: { price: 10, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 10, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 10, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 5, count: 10, isSpecial: true },
+      { day: "Thursday", price: 10, count: 10, isSpecial: false },
+      { day: "Friday", price: 10, count: 10, isSpecial: false },
+      { day: "Saturday", price: 10, count: 10, isSpecial: false },
+      { day: "Sunday", price: 10, count: 10, isSpecial: false }
+    ]
 
   },
   {
@@ -81,26 +81,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21224",
-      hours: {
-        Monday: "10am-2am",
-        Tuesday: "10am-2am",
-        Wednesday: "10am-2am",
-        Thursday: "10am-2am",
-        Friday: "10am-2am",
-        Saturday: "10am-2am",
-        Sunday: "10am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "10am-2am" },
+        { day: "Tuesday", time: "10am-2am" },
+        { day: "Wednesday", time: "10am-2am" },
+        { day: "Thursday", time: "10am-2am" },
+        { day: "Friday", time: "10am-2am" },
+        { day: "Saturday", time: "10am-2am" },
+        { day: "Sunday", time: "10am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 8.75, count: 10, isSpecial: false },
-      Tuesday: { price: 8.75, count: 10, isSpecial: false },
-      Wednesday: { price: 7, count: 10, isSpecial: true },
-      Thursday: { price: 8.75, count: 10, isSpecial: false },
-      Friday: { price: 8.75, count: 10, isSpecial: false },
-      Saturday: { price: 8.75, count: 10, isSpecial: false },
-      Sunday: { price: 8.75, count: 10, isSpecial: false }
-    }
-
+    wings: [
+      { day: "Monday", price: 8.75, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 8.75, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 7, count: 10, isSpecial: true },
+      { day: "Thursday", price: 8.75, count: 10, isSpecial: false },
+      { day: "Friday", price: 8.75, count: 10, isSpecial: false },
+      { day: "Saturday", price: 8.75, count: 10, isSpecial: false },
+      { day: "Sunday", price: 8.75, count: 10, isSpecial: false }
+    ]
   },
   {
     name: "Hudson Street Stackhouse",
@@ -112,25 +111,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21224",
-      hours: {
-        Monday: "3pm-2am",
-        Tuesday: "3pm-2am",
-        Wednesday: "3pm-2am",
-        Thursday: "3pm-2am",
-        Friday: "2pm-2am",
-        Saturday: "11am-2am",
-        Sunday: "11am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "3pm-2am", },
+        { day: "Tuesday", time: "3pm-2am", },
+        { day: "Wednesday", time: "3pm-2am", },
+        { day: "Thursday", time: "3pm-2am", },
+        { day: "Friday", time: "2pm-2am", },
+        { day: "Saturday", time: "11am-2am", },
+        { day: "Sunday", time: "11am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 6, count: 10, isSpecial: true },
-      Tuesday: { price: 7.99, count: 10, isSpecial: false },
-      Wednesday: { price: 7.99, count: 10, isSpecial: false },
-      Thursday: { price: 7.99, count: 10, isSpecial: false },
-      Friday: { price: 7.99, count: 10, isSpecial: false },
-      Saturday: { price: 7.99, count: 10, isSpecial: false },
-      Sunday: { price: 7.99, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 6, count: 10, isSpecial: true },
+      { day: "Tuesday", price: 7.99, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 7.99, count: 10, isSpecial: false },
+      { day: "Thursday", price: 7.99, count: 10, isSpecial: false },
+      { day: "Friday", price: 7.99, count: 10, isSpecial: false },
+      { day: "Saturday", price: 7.99, count: 10, isSpecial: false },
+      { day: "Sunday", price: 7.99, count: 10, isSpecial: false }
+    ]
 
   },
   {
@@ -143,25 +142,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21211",
-      hours: {
-        Monday: "5pm-11pm",
-        Tuesday: "5pm-11pm",
-        Wednesday: "5pm-11pm",
-        Thursday: "5pm-11pm",
-        Friday: "12pm-12am",
-        Saturday: "12pm-12am",
-        Sunday: "4pm-11pm"
-      }
+      hours: [
+        { day: "Monday", time: "5pm-11pm", },
+        { day: "Tuesday", time: "5pm-11pm", },
+        { day: "Wednesday", time: "5pm-11pm", },
+        { day: "Thursday", time: "5pm-11pm", },
+        { day: "Friday", time: "12pm-12am", },
+        { day: "Saturday", time: "12pm-12am", },
+        { day: "Sunday", time: "4pm-11pm" }
+      ]
     },
-    wings: {
-      Monday: { price: 12, count: 10, isSpecial: false },
-      Tuesday: { price: 5, count: 10, isSpecial: true },
-      Wednesday: { price: 12, count: 10, isSpecial: false },
-      Thursday: { price: 12, count: 10, isSpecial: false },
-      Friday: { price: 12, count: 10, isSpecial: false },
-      Saturday: { price: 12, count: 10, isSpecial: false },
-      Sunday: { price: 12, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 12, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 5, count: 10, isSpecial: true },
+      { day: "Wednesday", price: 12, count: 10, isSpecial: false },
+      { day: "Thursday", price: 12, count: 10, isSpecial: false },
+      { day: "Friday", price: 12, count: 10, isSpecial: false },
+      { day: "Saturday", price: 12, count: 10, isSpecial: false },
+      { day: "Sunday", price: 12, count: 10, isSpecial: false }
+    ]
 
   },
   {
@@ -174,25 +173,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21211",
-      hours: {
-        Monday: "11am-2am",
-        Tuesday: "11am-2am",
-        Wednesday: "11am-2am",
-        Thursday: "11am-2am",
-        Friday: "11am-2am",
-        Saturday: "8am-2am",
-        Sunday: "8am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "11am-2am", },
+        { day: "Tuesday", time: "11am-2am", },
+        { day: "Wednesday", time: "11am-2am", },
+        { day: "Thursday", time: "11am-2am", },
+        { day: "Friday", time: "11am-2am", },
+        { day: "Saturday", time: "8am-2am", },
+        { day: "Sunday", time: "8am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 5, count: 10, isSpecial: true },
-      Tuesday: { price: 10, count: 10, isSpecial: false },
-      Wednesday: { price: 10, count: 10, isSpecial: false },
-      Thursday: { price: 10, count: 10, isSpecial: false },
-      Friday: { price: 10, count: 10, isSpecial: false },
-      Saturday: { price: 10, count: 10, isSpecial: false },
-      Sunday: { price: 10, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 5, count: 10, isSpecial: true },
+      { day: "Tuesday", price: 10, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 10, count: 10, isSpecial: false },
+      { day: "Thursday", price: 10, count: 10, isSpecial: false },
+      { day: "Friday", price: 10, count: 10, isSpecial: false },
+      { day: "Saturday", price: 10, count: 10, isSpecial: false },
+      { day: "Sunday", price: 10, count: 10, isSpecial: false }
+    ]
 
   },
   {
@@ -205,25 +204,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21231",
-      hours: {
-        Monday: "11am-2am",
-        Tuesday: "11am-2am",
-        Wednesday: "11am-2am",
-        Thursday: "11am-2am",
-        Friday: "11am-2am",
-        Saturday: "11am-2am",
-        Sunday: "11am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "11am-2am", },
+        { day: "Tuesday", time: "11am-2am", },
+        { day: "Wednesday", time: "11am-2am", },
+        { day: "Thursday", time: "11am-2am", },
+        { day: "Friday", time: "11am-2am", },
+        { day: "Saturday", time: "11am-2am", },
+        { day: "Sunday", time: "11am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 11.95, count: 10, isSpecial: false },
-      Tuesday: { price: 11.95, count: 10, isSpecial: false },
-      Wednesday: { price: 11.95, count: 10, isSpecial: false },
-      Thursday: { price: 8, count: 10, isSpecial: true },
-      Friday: { price: 11.95, count: 10, isSpecial: false },
-      Saturday: { price: 11.95, count: 10, isSpecial: false },
-      Sunday: { price: 11.95, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 11.95, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 11.95, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 11.95, count: 10, isSpecial: false },
+      { day: "Thursday", price: 8, count: 10, isSpecial: true },
+      { day: "Friday", price: 11.95, count: 10, isSpecial: false },
+      { day: "Saturday", price: 11.95, count: 10, isSpecial: false },
+      { day: "Sunday", price: 11.95, count: 10, isSpecial: false }
+    ]
   },
   {
     name: "The Horse You Came In On Saloon",
@@ -235,25 +234,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21231",
-      hours: {
-        Monday: "11am-1:30am",
-        Tuesday: "11am-1:30am",
-        Wednesday: "11am-1:30am",
-        Thursday: "11am-1:30am",
-        Friday: "11am-1:30am",
-        Saturday: "11am-1:30am",
-        Sunday: "11am-1:30am"
-      }
+      hours: [
+        { day: "Monday", time: "11am-1:30am", },
+        { day: "Tuesday", time: "11am-1:30am", },
+        { day: "Wednesday", time: "11am-1:30am", },
+        { day: "Thursday", time: "11am-1:30am", },
+        { day: "Friday", time: "11am-1:30am", },
+        { day: "Saturday", time: "11am-1:30am", },
+        { day: "Sunday", time: "11am-1:30am" }
+      ]
     },
-    wings: {
-      Monday: { price: 7.50, count: 10, isSpecial: true },
-      Tuesday: { price: 14, count: 10, isSpecial: false },
-      Wednesday: { price: 14, count: 10, isSpecial: false },
-      Thursday: { price: 14, count: 10, isSpecial: false },
-      Friday: { price: 14, count: 10, isSpecial: false },
-      Saturday: { price: 14, count: 10, isSpecial: false },
-      Sunday: { price: 14, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 7.50, count: 10, isSpecial: true },
+      { day: "Tuesday", price: 14, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 14, count: 10, isSpecial: false },
+      { day: "Thursday", price: 14, count: 10, isSpecial: false },
+      { day: "Friday", price: 14, count: 10, isSpecial: false },
+      { day: "Saturday", price: 14, count: 10, isSpecial: false },
+      { day: "Sunday", price: 14, count: 10, isSpecial: false }
+    ]
   },
   {
     name: "Don't Know Tavern",
@@ -265,25 +264,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21230",
-      hours: {
-        Monday: "4pm-2am",
-        Tuesday: "4pm-2am",
-        Wednesday: "11:30am-2am",
-        Thursday: "11:30am-2am",
-        Friday: "11:30am-2am",
-        Saturday: "10am-2am",
-        Sunday: "10am-2am"
-      }
+      hours: [
+        { day: "Monday", time: "4pm-2am", },
+        { day: "Tuesday", time: "4pm-2am", },
+        { day: "Wednesday", time: "11:30am-2am", },
+        { day: "Thursday", time: "11:30am-2am", },
+        { day: "Friday", time: "11:30am-2am", },
+        { day: "Saturday", time: "10am-2am", },
+        { day: "Sunday", time: "10am-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 11, count: 10, isSpecial: false },
-      Tuesday: { price: 11, count: 10, isSpecial: false },
-      Wednesday: { price: 5, count: 10, isSpecial: true },
-      Thursday: { price: 11, count: 10, isSpecial: false },
-      Friday: { price: 11, count: 10, isSpecial: false },
-      Saturday: { price: 11, count: 10, isSpecial: false },
-      Sunday: { price: 11, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 11, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 11, count: 10, isSpecial: false },
+      { day: "Wednesday", price: 5, count: 10, isSpecial: true },
+      { day: "Thursday", price: 11, count: 10, isSpecial: false },
+      { day: "Friday", price: 11, count: 10, isSpecial: false },
+      { day: "Saturday", price: 11, count: 10, isSpecial: false },
+      { day: "Sunday", price: 11, count: 10, isSpecial: false }
+    ]
 
   },
   {
@@ -296,25 +295,25 @@ const restaurantSeed = [
       },
       state: "MD",
       zip: "21230",
-      hours: {
-        Monday: "4pm-2am",
-        Tuesday: "4pm-2am",
-        Wednesday: "4pm-2am",
-        Thursday: "4pm-2am",
-        Friday: "4pm-2am",
-        Saturday: "12pm-2am",
-        Sunday: "12pm-2am"
-      }
+      hours: [
+        { day: "Monday", time: "4pm-2am", },
+        { day: "Tuesday", time: "4pm-2am", },
+        { day: "Wednesday", time: "4pm-2am", },
+        { day: "Thursday", time: "4pm-2am", },
+        { day: "Friday", time: "4pm-2am", },
+        { day: "Saturday", time: "12pm-2am", },
+        { day: "Sunday", time: "12pm-2am" }
+      ]
     },
-    wings: {
-      Monday: { price: 11, count: 10, isSpecial: false },
-      Tuesday: { price: 7.50, count: 10, isSpecial: true },
-      Wednesday: { price: 11, count: 10, isSpecial: false },
-      Thursday: { price: 11, count: 10, isSpecial: false },
-      Friday: { price: 11, count: 10, isSpecial: false },
-      Saturday: { price: 11, count: 10, isSpecial: false },
-      Sunday: { price: 11, count: 10, isSpecial: false }
-    }
+    wings: [
+      { day: "Monday", price: 11, count: 10, isSpecial: false },
+      { day: "Tuesday", price: 7.50, count: 10, isSpecial: true },
+      { day: "Wednesday", price: 11, count: 10, isSpecial: false },
+      { day: "Thursday", price: 11, count: 10, isSpecial: false },
+      { day: "Friday", price: 11, count: 10, isSpecial: false },
+      { day: "Saturday", price: 11, count: 10, isSpecial: false },
+      { day: "Sunday", price: 11, count: 10, isSpecial: false }
+    ]
   },
 ];
 

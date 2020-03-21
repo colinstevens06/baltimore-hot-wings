@@ -10,15 +10,21 @@ import HeroLanding from "../components/Hero-Landing"
 import RestaurantCard from "../components/Restaurant-Cards/index.js";
 import CardWrapper from "../components/Card-Wrapper"
 
-
 function RestaurantPage(props) {
 
+  // United STATES
   const [restaurants, setRestaurants] = useState([])
 
+  const [todaysRestaurant, setTodaysRestaurant] = useState({})
+
+  // initializing with the data from the db
   useEffect(() => {
+
+    getTodaysInfo()
     getRestaurantsDB()
   }, [])
 
+  // hits the DB via the API to get all the restaurants info, then initialize
   const getRestaurantsDB = () => {
     API.getRestaurants()
       .then(res => {
@@ -30,8 +36,20 @@ function RestaurantPage(props) {
       .catch(err => console.log(err))
   }
 
-  return (
+  // get the information for all the restaurants, sorted for today
+  const getTodaysInfo = () => {
+    const today = new Date().getDay()
+    console.log(today)
 
+
+
+  }
+
+
+
+
+
+  return (
     <div>
       <Container>
         <HeroLanding />
@@ -42,22 +60,16 @@ function RestaurantPage(props) {
               name={store.name}
               neighborhood={store.location.city.neighborhood}
               hours={store.location.hours.Monday}
-              price={store.wings.Monday.price}
-              count={store.wings.Monday.count}
-              isSpecial={store.wings.Monday.isSpecial}
+              price={store.wings[0].price}
+              count={store.wings[0].count}
+              isSpecial={store.wings[0].isSpecial}
 
             />
           ))}
-
         </CardWrapper>
       </Container>
     </div>
-
-
   );
 }
-
-
-
 
 export default RestaurantPage;
