@@ -1,0 +1,18 @@
+$primaryColor: #d8623f;
+$primaryColorDark: #9e3718;
+
+$secondaryColor: #3f75d8;
+$secondaryColorDark: #1c53b9;
+
+a {
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@import "./nav";
+@import "./hero-landing";
+@import "./card-wrapper";
+@import "./restaurant-cards";
