@@ -1,9 +1,9 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
 
-
-import "./style.css"
+// COMPONENTS
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 function RestaurantCard(props) {
   return (
@@ -19,7 +19,12 @@ function RestaurantCard(props) {
           </Card.Text>
           <Card.Text>${props.price} for {props.count}</Card.Text>
           {/* <Card.Link href={props.link}>Link to full info</Card.Link> */}
-          <Link to={"restaurants/" + props.id}>Link to full info</Link>
+          <Link to={"restaurants/" + props.id}>
+            <Button className="btn-restaurant">
+              Link to full info
+            </Button>
+
+          </Link>
         </Card.Body>
       </Card>
     </div>
