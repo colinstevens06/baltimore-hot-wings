@@ -7,9 +7,9 @@ router.route("/")
 // .post(restaurantsController.create);
 
 // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(restaurantsController.findById)
+router
+  .route("/:id")
+  .get(restaurantsController.findById)
 //   .put(restaurantsController.update)
 //   .delete(restaurantsController.remove);
 
