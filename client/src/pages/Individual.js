@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API.js";
-import { Link, useParams } from "react-router-dom";
+// import API from "../utils/API.js";
+// import { useParams } from "react-router-dom";
 
 // layout features
 import Container from 'react-bootstrap/Container';
@@ -8,30 +8,27 @@ import IndividualHero from "../components/Hero-Individual/index.js";
 import StoreInfo from "../components/Table-Individual"
 
 function IndividualPage() {
-
-  const [restaurant, setRestaurant] = useState([])
-  // const [restaurants, setRestaurants] = useState([])
-
   // getting the id from the URL
-  const { id } = useParams()
+  // const { id } = useParams()
 
-  // useing that ID to set the state for the retaurant's information
-  useEffect(() => {
-    API.getRestaurant(id)
-      .then(res => setRestaurant(res.data))
-      .catch(err => console.log(err))
-    console.log(restaurant)
-  }, [])
+  // const [restaurant, setRestaurant] = useState({})
+
+  // // using that ID to set the state for the retaurant's information
+  // useEffect(() => {
+  //   API.getRestaurant(id)
+  //     // .then(res => console.log(res.data))
+  //     .then(res => setRestaurant(res.data))
+  //     .catch(err => console.log(err))
+  // }, [])
 
   return (
     <div>
       <Container>
         <IndividualHero
-          name={restaurant.name}
-          id={restaurant._id}
-        // wings={restaurant.wings[0].price}
+        // name={restaurant.name}
+        // id={restaurant._id}
         // city={restaurant.location.city.name}
-
+        // cityName={restaurant.location}
         />
         <StoreInfo />
 

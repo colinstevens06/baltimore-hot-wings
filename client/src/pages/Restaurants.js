@@ -14,14 +14,12 @@ function RestaurantPage(props) {
 
   // United STATES
   const [restaurants, setRestaurants] = useState([])
-
   const [todaysRestaurant, setTodaysRestaurant] = useState([])
 
   // initializing with the data from the db
   useEffect(() => {
 
     getRestaurantsDB()
-    // getTodaysInfo()
   }, [])
 
   // hits the DB via the API to get all the restaurants info, then initialize
@@ -50,8 +48,6 @@ function RestaurantPage(props) {
 
           todaysInfo.push(storeInfo)
 
-          console.log("TODAY TODAY TODAY")
-          console.log(todaysInfo)
         }
 
         setTodaysRestaurant(todaysInfo)
