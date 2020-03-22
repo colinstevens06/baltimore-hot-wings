@@ -18,7 +18,6 @@ function RestaurantPage(props) {
 
   // initializing with the data from the db
   useEffect(() => {
-
     getRestaurantsDB()
   }, [])
 
@@ -59,21 +58,25 @@ function RestaurantPage(props) {
     <div>
       <Container>
         <HeroLanding />
-        <CardWrapper>
-          {todaysRestaurant.map(store => (
-            <RestaurantCard
-              key={store.id}
-              id={store.id}
-              name={store.name}
-              neighborhood={store.neighborhood}
-              hours={store.hours}
-              price={store.price}
-              count={store.count}
-              isSpecial={store.isSpecial}
+      </Container>
+      <Container fluid className="pt-5 dark-bg">
+        <Container>
+          <CardWrapper>
+            {todaysRestaurant.map(store => (
+              <RestaurantCard
+                key={store.id}
+                id={store.id}
+                name={store.name}
+                neighborhood={store.neighborhood}
+                hours={store.hours}
+                price={store.price}
+                count={store.count}
+                isSpecial={store.isSpecial}
 
-            />
-          ))}
-        </CardWrapper>
+              />
+            ))}
+          </CardWrapper>
+        </Container>
 
       </Container>
     </div>

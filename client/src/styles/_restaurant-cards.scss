@@ -1,7 +1,8 @@
 .card {
-  /* background-image: linear-gradient(to bottom right, rgb(57, 63, 73), rgb(27, 42, 73)); */
-  background-image: radial-gradient(farthest-corner at 10px 10px, #d8623f, #9e3718);
-  color: #f3f3f3;
+
+  // background-image: radial-gradient(farthest-corner at 10px 10px, #d8623f, #9e3718);
+  background-image: radial-gradient(farthest-corner at 10px 10px, #ffffff, #f5f5f5);
+  color: #000000;
   box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, .5);
   border: none;
   border-radius: 5px;
@@ -13,7 +14,16 @@
 } 
 
 .isSpecial {
-  background-image: radial-gradient(farthest-corner at 10px 10px, #3f75d8, #1c53b9);
+  background-image: radial-gradient(farthest-corner at 10px 10px, $primaryColor, $primaryColorDark);
+  .btn-primary {
+    color: $secondaryColor;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
 }
 
 .card > .content {
@@ -37,6 +47,12 @@
 list-style-type: none;  
 }
 
+.btn-primary {
+  color: $secondaryColor;
+  background-color: #ffffff;
+  border-color: #2d30d4;
+}
+
 @media only screen and (max-width: 415px) {
   .card {
     width: 150px;
@@ -55,10 +71,4 @@ list-style-type: none;
   .card > .content > ul > li {
     margin-top: 4px;
   }
-}
-
-.btn-primary {
-  color: $secondaryColor;
-  background-color: #ffffff;
-  border-color: #ffffff;
 }

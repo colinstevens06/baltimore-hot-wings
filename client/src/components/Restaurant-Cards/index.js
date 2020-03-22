@@ -18,7 +18,7 @@ function RestaurantCard(props) {
             {props.hours}
           </Card.Text>
           <Card.Text>${props.price} for {props.count}</Card.Text>
-          {/* <Card.Link href={props.link}>Link to full info</Card.Link> */}
+
           <Link to={"restaurants/" + props.id}>
             <Button className="btn-restaurant">
               Link to full info
