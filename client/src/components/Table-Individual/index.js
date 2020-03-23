@@ -42,8 +42,12 @@ function StoreInfo() {
         {store &&
           <div>
 
+
+
+            
+
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[0].day}</strong></p>
               </Col>
               <Col>
@@ -53,9 +57,9 @@ function StoreInfo() {
                 <p>{store.location.hours[0].time}</p>
               </Col>
             </Row>
-
+            <hr />
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[1].day}</strong></p>
               </Col>
               <Col>
@@ -65,9 +69,10 @@ function StoreInfo() {
                 <p>{store.location.hours[1].time}</p>
               </Col>
             </Row>
+            <hr />
 
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[2].day}</strong></p>
               </Col>
               <Col>
@@ -77,8 +82,10 @@ function StoreInfo() {
                 <p>{store.location.hours[2].time}</p>
               </Col>
             </Row>
+            <hr />
+
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[3].day}</strong></p>
               </Col>
               <Col>
@@ -88,8 +95,9 @@ function StoreInfo() {
                 <p>{store.location.hours[3].time}</p>
               </Col>
             </Row>
+            <hr />
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[4].day}</strong></p>
               </Col>
               <Col>
@@ -99,8 +107,9 @@ function StoreInfo() {
                 <p>{store.location.hours[4].time}</p>
               </Col>
             </Row>
+            <hr />
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[5].day}</strong></p>
               </Col>
               <Col>
@@ -110,8 +119,9 @@ function StoreInfo() {
                 <p>{store.location.hours[5].time}</p>
               </Col>
             </Row>
+            <hr />
             <Row>
-              <Col>
+              <Col className="day-of-week">
                 <p><strong>{store.location.hours[6].day}</strong></p>
               </Col>
               <Col>

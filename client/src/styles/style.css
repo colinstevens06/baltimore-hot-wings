@@ -46,6 +46,11 @@ nav {
   margin-left: 20px;
 }
 
+.jumbotron {
+  background-color: #3f75d8;
+  color: #ffffff;
+}
+
 .table-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,5 +138,15 @@ nav {
   .card > .content > ul > li {
     margin-top: 4px;
   }
+}
+
+.day-of-week {
+  text-align: right;
+}
+
+.day-of-week p {
+  padding-right: 15px;
+  font-size: 1.25rem;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
