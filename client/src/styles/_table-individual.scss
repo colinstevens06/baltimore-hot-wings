@@ -1,9 +1,33 @@
 .day-of-week {
   text-align: right;
-  p {
-    padding-right: 15px;
-    font-size: 1.25rem;
-    margin-bottom: 0;
-  }
+  width: 23%;
+  font-size: 1.2rem;
+}
+
+.table {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: $primaryColor;
+  color: #ffffff;
+}
+
+thead {
+  background-color: $secondaryColor;
+  color: #ffffff;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.fa-w-16 {
+  font-size: 1.5rem;
+  margin-left: .5rem;
 }
 

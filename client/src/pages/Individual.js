@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-// import API from "../utils/API.js";
-// import { useParams } from "react-router-dom";
+import React from "react";
 
 // layout features
 import Container from 'react-bootstrap/Container';
