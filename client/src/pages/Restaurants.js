@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 import HeroLanding from "../components/Hero-Landing"
 import RestaurantCard from "../components/Restaurant-Cards/index.js";
 import CardWrapper from "../components/Card-Wrapper"
-
+import Footer from "../components/Footer"
 function RestaurantPage(props) {
 
   // United STATES
@@ -74,7 +74,7 @@ function RestaurantPage(props) {
             />
           ))}
         </CardWrapper>
-
+            <Footer/>
       </Container>
     </div>
   );
