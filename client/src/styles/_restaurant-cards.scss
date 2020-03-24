@@ -1,6 +1,4 @@
 .card {
-
-  // background-image: radial-gradient(farthest-corner at 10px 10px, #d8623f, #9e3718);
   background-image: radial-gradient(farthest-corner at 10px 10px, #ffffff, #f5f5f5);
   color: #000000;
   box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, .5);
@@ -23,7 +21,6 @@
       color: $primaryColor;
     }
   }
-
 }
 
 .card > .content {
@@ -53,15 +50,30 @@ list-style-type: none;
   border-color: #2d30d4;
 }
 
+.tile-header {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
 @media only screen and (max-width: 415px) {
   .card {
     width: 150px;
-    height: 195px;
+    height: 275px;
     padding-top: 12px;
   }
 
   .card-title {
-    font-size: 16px;
+    font-size: 26px;
+  }
+
+  .card-neighborhood {
+    font-size: 20px;
+  }
+
+  .card-price {
+    font-size: 24px;
   }
 
   .card > .content {
@@ -71,4 +83,12 @@ list-style-type: none;
   .card > .content > ul > li {
     margin-top: 4px;
   }
+
+  .tile-header {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+
 }

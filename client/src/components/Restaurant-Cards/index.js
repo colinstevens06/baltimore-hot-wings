@@ -13,11 +13,11 @@ function RestaurantCard(props) {
       >
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
-          <Card.Subtitle className="mb-2">{props.neighborhood}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 card-neighborhood">{props.neighborhood}</Card.Subtitle>
           <Card.Text>
             {props.hours}
           </Card.Text>
-          <Card.Text>${props.price} for {props.count}</Card.Text>
+          <Card.Text className="card-price">${props.price} for {props.count}</Card.Text>
 
           <Link to={"restaurants/" + props.id}>
             <Button className="btn-restaurant">
