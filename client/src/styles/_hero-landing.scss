@@ -18,3 +18,14 @@
   background-color: rgb(63, 117, 216);
   color: #ffffff;
 }
+
+
+@media only screen and (max-width: 415px) {
+  .main-text-box {
+    padding-bottom: 35px;
+  }
+
+  .main-header {
+    display: none;
+  }
+}
