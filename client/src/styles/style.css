@@ -172,4 +172,34 @@ td {
   font-size: 1.5rem;
   margin-left: .5rem;
 }
+
+body {
+  background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
+}
+
+.bWingBorder {
+  border: 2px  solid #d8623f;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.bWingButton {
+  padding: 10px 15px;
+  color: #d8623f;
+  border-radius: 10px;
+  border: 2px solid  #d8623f;
+  text-align: center;
+}
+
+.bWingButton:hover {
+  background-color: #d8623f;
+  color: black;
+}
+
+.bWingButton:active {
+  background-color: #1c53b9;
+  color: white;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
 /*# sourceMappingURL=style.css.map */

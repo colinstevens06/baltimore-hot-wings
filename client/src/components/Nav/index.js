@@ -11,12 +11,12 @@ function Navigation() {
 
       <Navbar collapseOnSelect expand="lg" variant="dark">
         <img className="img-fluid nav-image" src={WingsLogo} alt="BMore Wings Logo" />
-        <Navbar.Brand href="/">BMore Wing App</Navbar.Brand>
+        <Navbar.Brand href="/home">BMore Wing App</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="#restaurants">Restaurants</Nav.Link>
           </Nav>
         </Navbar.Collapse>
