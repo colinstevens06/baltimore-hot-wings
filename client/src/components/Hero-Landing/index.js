@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.css'
 import WingsLogo from '../../assets/images/logos/bmore-wings-logo-large.png'
 
 //layout
@@ -14,7 +13,11 @@ function HeroLanding() {
       <Row>
         <Col>
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
-          <h1 className="d-inline-block">BMore Wings App</h1>
+          <div className="d-inline-block main-text-box">
+            <h1 className="main-header">BMore Wings App</h1>
+            <div className="main-subhead"><em>All of Baltimore's wings deals in one place</em></div>
+
+          </div>
         </Col>
       </Row>
     </div>

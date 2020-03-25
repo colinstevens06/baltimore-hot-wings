@@ -1,0 +1,28 @@
+nav {
+  background-color: $secondaryColorDark;
+};
+
+.navbar {
+  padding: 1rem 1rem;
+}
+
+.nav-image {
+  width: 100px;
+  transform: rotate(-10deg);
+};
+
+.navbar-brand {
+  font-size: 1.75rem;
+  margin-left: 15px;
+};
+
+@media only screen and (max-width: 415px) {
+  .nav-image {
+    width: 75px;
+  };
+
+  .navbar-brand {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  };
+}
