@@ -1,0 +1,227 @@
+.dark-bg {
+  background-color: #1c53b9;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  background-color: #1c53b9;
+}
+
+.navbar {
+  padding: 1rem 1rem;
+}
+
+.nav-image {
+  width: 100px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 415px) {
+  .nav-image {
+    width: 75px;
+  }
+  .navbar-brand {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+}
+
+.hero-image {
+  height: 300px;
+}
+
+.main-header {
+  font-size: 4rem;
+}
+
+.main-subhead {
+  font-size: 1.75rem;
+}
+
+.main-text-box {
+  margin-left: 20px;
+}
+
+.jumbotron {
+  background-color: #3f75d8;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 415px) {
+  .main-text-box {
+    padding-bottom: 35px;
+  }
+  .main-header {
+    display: none;
+  }
+}
+
+.table-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 10px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.card {
+  background-image: radial-gradient(farthest-corner at 10px 10px, #ffffff, #f5f5f5);
+  color: #000000;
+  -webkit-box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  height: 240px;
+  margin: 1rem;
+  position: relative;
+  width: 200px;
+  text-align: center;
+}
+
+.isSpecial {
+  background-image: radial-gradient(farthest-corner at 10px 10px, #d8623f, #9e3718);
+}
+
+.isSpecial .btn-primary {
+  color: #3f75d8;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.isSpecial .btn-primary:hover {
+  color: #d8623f;
+}
+
+.card > .content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.card-title {
+  font-size: 22px;
+}
+
+.content > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.card > .content > ul > li {
+  margin-top: 18px;
+  list-style-type: none;
+}
+
+.btn-primary {
+  color: #3f75d8;
+  background-color: #ffffff;
+  border-color: #2d30d4;
+}
+
+.tile-header {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 415px) {
+  .card {
+    width: 150px;
+    height: 275px;
+    padding-top: 12px;
+  }
+  .card-title {
+    font-size: 26px;
+  }
+  .card-neighborhood {
+    font-size: 20px;
+  }
+  .card-price {
+    font-size: 24px;
+  }
+  .card > .content {
+    font-size: 12px;
+  }
+  .card > .content > ul > li {
+    margin-top: 4px;
+  }
+  .tile-header {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+}
+
+.day-of-week {
+  text-align: right;
+  width: 23%;
+  font-size: 1.2rem;
+}
+
+.table {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #d8623f;
+  color: #ffffff;
+}
+
+thead {
+  background-color: #3f75d8;
+  color: #ffffff;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.fa-w-16 {
+  font-size: 1.5rem;
+  margin-left: .5rem;
+}
+
+@media only screen and (max-width: 415px) {
+  .day-of-week {
+    text-align: right;
+    width: 18%;
+    font-size: 1rem;
+  }
+  .table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
