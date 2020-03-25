@@ -9,12 +9,21 @@ export default {
     return axios.get("/api/restaurants/" + id)
   },
 
-   login: function(username, pass) {
-    return axios.post("api/restaurants/login", {}, {
-      auth: {
-        username: username,
-        password: pass
+  login: async function (username, pass) {
+    try {
+      const aResponse = await axios.post("api/restaurants/login", {
+        body: {
+          username: username,
+          password: pass
+        }
+      })
+
+      if (aResponse.status === 200) {
+        return 'success'
       }
-    })
+    }
+    catch (err) {
+        return 'fail'
+    }
   }
 };

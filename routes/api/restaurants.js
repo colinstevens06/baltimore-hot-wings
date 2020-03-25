@@ -9,9 +9,12 @@ router.route("/home")
 
 // route to login page
 router.post("/login", function(req, res) {
-  console.log(req.auth);
-  if(req.body.username === process.env.USER_ID) {
-    if(req.body.pass === process.env.PASSWORD) {
+  //set a local variable up for usage.
+  let request = req.body;
+
+  //check against our env data
+  if(request.body.username === process.env.USER_ID) {
+    if(request.body.password === process.env.PASSWORD) {
       res.sendStatus(200);
     }
     else {
