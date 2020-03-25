@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, {Component } from "react";
 import { Container, Row, Form } from "react-bootstrap";
 import WingsLogo from '../assets/images/logos/bmore-wings-logo-large.png'
 import API from "../utils/API";
