@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import RestaurantPage from "./pages/Restaurants"
 import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
+import SpinnerPage from "./pages/Spinner"
 
 // COMPONENTS
 import Nav from "./components/Nav"
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/restaurants/:id">
             <IndividualPage />
+          </Route>
+          <Route exact path="/spinner">
+            <SpinnerPage />
           </Route>
           <Route>
             <NoMatch />

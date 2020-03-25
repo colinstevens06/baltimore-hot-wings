@@ -8,13 +8,13 @@ import Container from 'react-bootstrap/Container';
 import HeroLanding from "../components/Hero-Landing"
 import RestaurantCard from "../components/Restaurant-Cards/index.js";
 import CardWrapper from "../components/Card-Wrapper"
-import Footer from "../components/Footer"
-// import Spinner from "../components/Spinner"
+import Wheel from "../components/Spinner"
 function RestaurantPage(props) {
 
   // United STATES
   const [restaurants, setRestaurants] = useState(undefined)
   const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
+  const deals=["coupons", "promotions", "randomPlace"]
 
   // initializing with the data from the db
   useEffect(() => {
@@ -56,7 +56,6 @@ function RestaurantPage(props) {
   return (
     <div>
 
-
       {todaysRestaurant &&
         <div>
 
@@ -81,10 +80,8 @@ function RestaurantPage(props) {
                   />
                 ))}
               </CardWrapper>
-
-            <Footer/>
             </Container>
-
+<Wheel items={deals}/> 
           </Container>
 
 
