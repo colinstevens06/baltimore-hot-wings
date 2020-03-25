@@ -8,7 +8,8 @@ import Container from 'react-bootstrap/Container';
 import HeroLanding from "../components/Hero-Landing"
 import RestaurantCard from "../components/Restaurant-Cards/index.js";
 import CardWrapper from "../components/Card-Wrapper"
-
+import Footer from "../components/Footer"
+// import Spinner from "../components/Spinner"
 function RestaurantPage(props) {
 
   // United STATES
@@ -55,6 +56,7 @@ function RestaurantPage(props) {
   return (
     <div>
 
+
       {todaysRestaurant &&
         <div>
 
@@ -79,6 +81,8 @@ function RestaurantPage(props) {
                   />
                 ))}
               </CardWrapper>
+
+            <Footer/>
             </Container>
 
           </Container>
