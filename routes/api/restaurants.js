@@ -2,8 +2,8 @@ const router = require("express").Router();
 const restaurantsController = require("../../controllers/restaurantsController");
 if(process.env.NODE_ENV != 'production') {const dotenv = require('dotenv/config')};
 
-// Matches with "/api/books"
-router.route("/home")
+// Matches with "/api/restaurants"
+router.route("/")
   .get(restaurantsController.findAll)
 // .post(restaurantsController.create);
 
