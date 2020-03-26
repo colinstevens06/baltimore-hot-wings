@@ -11,10 +11,10 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   // use this locally 
-  app.use(express.static("client"));
+  // app.use(express.static("client"));
 
   // use this for heroku
-  // app.use(express.static("client/build"));
+  app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 app.use(routes);
