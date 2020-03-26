@@ -13,21 +13,38 @@ export default class Wheel extends React.Component {
     super(props);
     this.state = {
       selectedItem: null,
+<<<<<<< Updated upstream
+
+    };
+    this.selectItem = this.selectItem.bind(this);
+    this.modal = this.modal.bind(this);
+  }
+
+=======
     };
     this.selectItem = this.selectItem.bind(this);
   }
 
+>>>>>>> Stashed changes
   selectItem() {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
       if (this.props.onSelectItem) {
         this.props.onSelectItem(selectedItem);
+        
       }
       this.setState({ selectedItem });
+      setTimeout(this.modal, 4000);
     } else {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
+      
     }
+  }
+  modal(){
+    const time = this.props.items[this.state.selectedItem]
+      // setTimeout(function(time)//{
+        alert (time);
   }
 
   render() {
