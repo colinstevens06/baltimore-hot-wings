@@ -11,7 +11,7 @@ export default {
 
   login: async function (username, pass) {
     try {
-      const aResponse = await axios.post("api/restaurants/login", {
+      const aResponse = await axios.post("/api/restaurants/login", {
         body: {
           username: username,
           password: pass
