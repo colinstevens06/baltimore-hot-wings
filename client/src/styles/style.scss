@@ -4,6 +4,10 @@ $primaryColorDark: #9e3718;
 $secondaryColor: #3f75d8;
 $secondaryColorDark: #1c53b9;
 
+.primary-color {
+  color: $primaryColor;
+}
+
 .dark-bg {
   background-color: $secondaryColorDark;
 }
