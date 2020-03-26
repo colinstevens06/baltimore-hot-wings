@@ -64,7 +64,8 @@ function RestaurantPage(props) {
           </Container>
           <Container fluid className="py-4 dark-bg">
             <Container>
-              <h2 className="tile-header">{todaysRestaurant[0].day}'s Wing Deals</h2>
+              <h2 className="tile-header">{todaysRestaurant[0].day}'s Prices</h2>
+              <p className="tile-subhead"><em>Specials marked in orange</em></p>
               <CardWrapper>
                 {todaysRestaurant.map(store => (
                   <RestaurantCard
@@ -81,7 +82,7 @@ function RestaurantPage(props) {
                 ))}
               </CardWrapper>
             </Container>
-            <Wheel items={deals} />
+            {/* <Wheel items={deals} /> */}
           </Container>
 
 

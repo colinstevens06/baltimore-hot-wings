@@ -10,27 +10,26 @@ import Container from 'react-bootstrap/Container';
 import Wheel from "../components/Spinner"
 function SpinnerPage(props) {
 
-    // United STATES
-    const deals=["Coupons", "Promotions", "Random Place", "Tina's House", "Colin's House"]
+  // United STATES
+  const deals = ["Coupons", "Promotions", "Random Place", "Tina's House", "Colin's House"]
 
-    return (
-        <div>
-    
-          
-            <div>
-    
-             
-              <Container fluid className="py-4 dark-bg">
-               
-    <Wheel items={deals}/> 
-              </Container>
-    
-    
-            </div>
-          
-        </div>
-      );
-    }
-    
-    export default SpinnerPage;
-  
+  return (
+    <div>
+
+
+      <div>
+
+
+        <Container fluid className="py-4 dark-bg">
+
+          <Wheel items={deals} />
+        </Container>
+
+
+      </div>
+
+    </div>
+  );
+}
+
+export default SpinnerPage;

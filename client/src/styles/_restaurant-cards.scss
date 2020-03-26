@@ -57,6 +57,21 @@ list-style-type: none;
   line-height: 1.6;
 }
 
+.tile-subhead {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  line-height: .5;
+  // background-color: $primaryColor;
+  width: fit-content;
+  padding: .75rem 1rem;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+
 @media only screen and (max-width: 415px) {
   .card {
     width: 150px;
