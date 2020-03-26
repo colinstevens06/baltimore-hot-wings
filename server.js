@@ -11,10 +11,10 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   // use this locally 
-  // app.use(express.static("client"));
+  app.use(express.static("client"));
 
   // use this for heroku
-  app.use(express.static("client/build"));
+  // app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 app.use(routes);
@@ -26,3 +26,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/baltimoreHotWin
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+//mongodb://heroku_brfkhlt4:3uoibjad49o0kd9tu7tfkdc5uq@ds145405.mlab.com:45405/heroku_brfkhlt4

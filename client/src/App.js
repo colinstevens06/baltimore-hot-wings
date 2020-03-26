@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-
-
 import RestaurantPage from "./pages/Restaurants"
 import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
@@ -21,7 +19,7 @@ function App() {
           <Route exact path="/">
             <RestaurantPage />
           </Route>
-          <Route exact path="/restaurants/:id">
+          <Route path="/restaurants/:id">
             <IndividualPage />
           </Route>
           <Route exact path="/spinner">
