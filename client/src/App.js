@@ -5,6 +5,7 @@ import RestaurantPage from "./pages/Restaurants"
 import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
 import LogIn from "./pages/LogIn"
+import AdminForm from "./pages/AdminForm"
 
 // COMPONENTS
 import Nav from "./components/Nav"
@@ -14,8 +15,7 @@ export default class App extends Component {
     super();
 
     this.state = {
-      loggedInStatus: "NOT_LOGGED_IN",
-      user: {}
+      loggedInStatus: "NOT_LOGGED_IN"
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -44,6 +44,19 @@ export default class App extends Component {
               )}
             >
             </Route>
+            <Route 
+              exact 
+              path = {"/admin"}
+              render={props => (
+                <>
+                <Nav />
+                <AdminForm
+                  {...props}
+                  loggedInStatus={this.loggedInStatus}
+                />
+                </>
+              )}
+            />
             <Route exact path="/">
               <Nav />
               <RestaurantPage />

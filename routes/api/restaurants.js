@@ -21,6 +21,9 @@ router.post("/login", function(req, res) {
       res.sendStatus(500);
     }
   }
+  else {
+    res.sendStatus(500);
+  }
 })
 
 // Matches with "/api/books/:id"
