@@ -11,20 +11,16 @@ import Table from 'react-bootstrap/Table'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDrumstickBite } from '@fortawesome/free-solid-svg-icons'
 
-
-
-function StoreInfo() {
-  const { id } = useParams()
-
+function StoreInfo(props) {
+  const id = props.id
   const [store, setStore] = useState(undefined)
 
   // using that ID to set the state for the retaurant's information
   useEffect(() => {
     API.getRestaurant(id)
-      // .then(res => console.log(res.data))
-      .then(res => { setStore(res.data); console.log(res.data); console.log(store) })
+      .then(res => setStore(res.data))
       .catch(err => console.log(err))
-  }, [])
+  }, [id])
 
   return (
     <div>
@@ -32,12 +28,11 @@ function StoreInfo() {
         <Table striped>
           <thead>
             <tr>
-              <th className="day-of-week"></th>
+              <th>Day</th>
               <th>Pricing</th>
               <th>Hours</th>
             </tr>
           </thead>
-
 
           {store &&
 

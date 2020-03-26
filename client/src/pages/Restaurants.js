@@ -14,7 +14,7 @@ function RestaurantPage(props) {
   // United STATES
   const [restaurants, setRestaurants] = useState(undefined)
   const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
-  const deals=["coupons", "promotions", "randomPlace"]
+  const deals = ["coupons", "promotions", "randomPlace"]
 
   // initializing with the data from the db
   useEffect(() => {
@@ -81,7 +81,7 @@ function RestaurantPage(props) {
                 ))}
               </CardWrapper>
             </Container>
-<Wheel items={deals}/> 
+            <Wheel items={deals} />
           </Container>
 
 
