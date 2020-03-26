@@ -15,13 +15,22 @@ export default class App extends Component {
     super();
 
     this.state = {
-      loggedInStatus: "NOT_LOGGED_IN"
+      loggedInStatus: ""
     }
 
     this.handleLogin = this.handleLogin.bind(this);
   }
 
+  componentDidMount() {
+    if (this.state.loggedInStatus === "") {
+      this.setState({
+        loggedInStatus: "NOT_LOGGED_IN"
+      })
+    }
+  }
+
   handleLogin(data) {
+    console.log('THIS IS', data);
     this.setState({
       loggedInStatus: data
     })
@@ -44,16 +53,16 @@ export default class App extends Component {
               )}
             >
             </Route>
-            <Route 
-              exact 
-              path = {"/admin"}
+            <Route
+              exact
+              path={"/admin"}
               render={props => (
                 <>
-                <Nav />
-                <AdminForm
-                  {...props}
-                  loggedInStatus={this.loggedInStatus}
-                />
+                  <Nav />
+                  <AdminForm
+                    {...props}
+                    loggedInStatus={this.loggedInStatus}
+                  />
                 </>
               )}
             />
@@ -69,7 +78,6 @@ export default class App extends Component {
               <NoMatch />
             </Route>
           </Switch>
-
         </div>
       </Router>
 

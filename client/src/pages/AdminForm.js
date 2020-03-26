@@ -17,5 +17,5 @@ export default class AdminForm extends Component {
         return(
             <h1>Testing</h1>
         )
-    }
+    };
 }

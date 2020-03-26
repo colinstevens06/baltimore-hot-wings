@@ -20,7 +20,13 @@ export default class LogIn extends Component {
   }
 
   checkLogin() {
-    return;
+    if(this.props.loggedInStatus === "LOGGED_IN") {
+      this.props.history.push('/admin');
+    } 
+  }
+
+  componentDidMount() {
+    this.checkLogin();
   }
 
   // Handles updating component state when the user types into the input field
@@ -47,7 +53,7 @@ export default class LogIn extends Component {
       
       //check the results and move us on or show errors
       if (results === 'success') {
-        this.props.handleLogin('LOGGED_ID');
+        this.props.handleLogin('LOGGED_IN');
         this.props.history.push('/admin');
       }
       else {
