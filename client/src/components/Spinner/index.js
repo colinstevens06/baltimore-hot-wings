@@ -4,6 +4,7 @@ import WingsLogo from '../../assets/images/logos/bmore-wings-logo-large.png'
 //layout
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Modal from "react-bootstrap/Modal";
 
 
 import './style.css';
@@ -13,19 +14,12 @@ export default class Wheel extends React.Component {
     super(props);
     this.state = {
       selectedItem: null,
-<<<<<<< Updated upstream
 
     };
     this.selectItem = this.selectItem.bind(this);
     this.modal = this.modal.bind(this);
   }
 
-=======
-    };
-    this.selectItem = this.selectItem.bind(this);
-  }
-
->>>>>>> Stashed changes
   selectItem() {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.props.items.length);
