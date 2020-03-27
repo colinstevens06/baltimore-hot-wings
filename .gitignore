@@ -105,4 +105,7 @@ dist
 # TernJS port file
 .tern-port
 
+# Environment Variables
+.env
+
 client/build/

@@ -8,6 +8,7 @@
         "_card-wrapper.scss",
         "_restaurant-cards.scss",
         "_table-individual.scss",
+        "_login.scss",
         "_restaurant-dropdown.scss"
     ],
     "names": [],
