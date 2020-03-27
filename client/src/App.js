@@ -6,6 +6,7 @@ import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
 import LogIn from "./pages/LogIn"
 import AdminForm from "./pages/AdminForm"
+import SpinnerPage from "./pages/Spinner"
 
 // COMPONENTS
 import Nav from "./components/Nav"
@@ -74,6 +75,9 @@ export default class App extends Component {
               <Nav />
               <IndividualPage />
             </Route>
+            <Route exact path="/spinner">
+              <SpinnerPage />
+            </Route>
             <Route>
               <NoMatch />
             </Route>
@@ -84,3 +88,4 @@ export default class App extends Component {
     )
   }
 }
+

@@ -1,3 +1,7 @@
+.primary-color {
+  color: #d8623f;
+}
+
 .dark-bg {
   background-color: #1c53b9;
 }
@@ -30,6 +34,16 @@ nav {
   margin-left: 15px;
 }
 
+@media only screen and (max-width: 415px) {
+  .nav-image {
+    width: 75px;
+  }
+  .navbar-brand {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+}
+
 .hero-image {
   height: 300px;
 }
@@ -49,6 +63,15 @@ nav {
 .jumbotron {
   background-color: #3f75d8;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 415px) {
+  .main-text-box {
+    padding-bottom: 35px;
+  }
+  .main-header {
+    display: none;
+  }
 }
 
 .table-wrapper {
@@ -123,14 +146,42 @@ nav {
   border-color: #2d30d4;
 }
 
+.tile-header {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.6;
+}
+
+.tile-subhead {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  line-height: .5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .75rem 1rem;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 415px) {
   .card {
     width: 150px;
-    height: 195px;
+    height: 275px;
     padding-top: 12px;
   }
   .card-title {
-    font-size: 16px;
+    font-size: 26px;
+  }
+  .card-neighborhood {
+    font-size: 20px;
+  }
+  .card-price {
+    font-size: 24px;
   }
   .card > .content {
     font-size: 12px;
@@ -138,10 +189,16 @@ nav {
   .card > .content > ul > li {
     margin-top: 4px;
   }
+  .tile-header {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.6;
+  }
 }
 
 .day-of-week {
-  text-align: right;
+  text-align: center;
   width: 23%;
   font-size: 1.2rem;
 }
@@ -201,5 +258,26 @@ body {
   color: white;
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
+}
+
+@media only screen and (max-width: 415px) {
+  .day-of-week {
+    width: 18%;
+    font-size: 1rem;
+  }
+  .table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+}
+
+.dropdown {
+  margin-left: auto;
+  margin-right: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 /*# sourceMappingURL=style.css.map */

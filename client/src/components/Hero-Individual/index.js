@@ -10,7 +10,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 
 function IndividualHero(props) {
 
-  const { id } = useParams()
+  const id = props.id
 
   const [store, setStore] = useState(undefined)
 
@@ -18,16 +18,16 @@ function IndividualHero(props) {
   useEffect(() => {
     API.getRestaurant(id)
       // .then(res => console.log(res.data))
-      .then(res => { setStore(res.data); console.log(res.data); console.log(store) })
+      .then(res => { setStore(res.data); console.log(res.data) })
       .catch(err => console.log(err))
-  }, [])
+  }, [id])
 
   return (
     <div>
 
       {store &&
 
-        <Jumbotron className="mt-5">
+        <Jumbotron className="mt-4 mb-0">
           <h1>{store.name}</h1>
           <h2>{store.location.city.neighborhood}</h2>
           <div className="address-line">{store.location.streetLineOne}</div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API.js";
-// import { Link } from "react-router-dom";
 
 // layout features
 import Container from 'react-bootstrap/Container';
@@ -9,20 +8,17 @@ import Container from 'react-bootstrap/Container';
 import HeroLanding from "../components/Hero-Landing"
 import RestaurantCard from "../components/Restaurant-Cards/index.js";
 import CardWrapper from "../components/Card-Wrapper"
-
+import Wheel from "../components/Spinner"
 function RestaurantPage(props) {
 
   // United STATES
-  const [restaurants, setRestaurants] = useState([])
-  const [todaysRestaurant, setTodaysRestaurant] = useState([])
+  const [restaurants, setRestaurants] = useState(undefined)
+  const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
+  const deals = ["coupons", "promotions", "randomPlace"]
 
   // initializing with the data from the db
   useEffect(() => {
-    getRestaurantsDB()
-  }, [])
 
-  // hits the DB via the API to get all the restaurants info, then initialize
-  const getRestaurantsDB = () => {
     API.getRestaurants()
       .then(res => {
         let stores = res.data
@@ -42,7 +38,8 @@ function RestaurantPage(props) {
             "hours": stores[i].location.hours[today].time,
             "price": stores[i].wings[today].price,
             "count": stores[i].wings[today].count,
-            "isSpecial": stores[i].wings[today].isSpecial
+            "isSpecial": stores[i].wings[today].isSpecial,
+            "day": stores[i].wings[today].day
           }
 
           todaysInfo.push(storeInfo)
@@ -52,33 +49,45 @@ function RestaurantPage(props) {
         setTodaysRestaurant(todaysInfo)
       })
       .catch(err => console.log(err))
-  }
+    console.log(restaurants)
+  }, [])
+
 
   return (
     <div>
-      <Container>
-        <HeroLanding />
-      </Container>
-      <Container fluid className="pt-5 dark-bg">
-        <Container>
-          <CardWrapper>
-            {todaysRestaurant.map(store => (
-              <RestaurantCard
-                key={store.id}
-                id={store.id}
-                name={store.name}
-                neighborhood={store.neighborhood}
-                hours={store.hours}
-                price={store.price}
-                count={store.count}
-                isSpecial={store.isSpecial}
 
-              />
-            ))}
-          </CardWrapper>
-        </Container>
+      {todaysRestaurant &&
+        <div>
 
-      </Container>
+          <Container>
+            <HeroLanding />
+          </Container>
+          <Container fluid className="py-4 dark-bg">
+            <Container>
+              <h2 className="tile-header">{todaysRestaurant[0].day}'s Prices</h2>
+              <p className="tile-subhead"><em>Specials marked in orange</em></p>
+              <CardWrapper>
+                {todaysRestaurant.map(store => (
+                  <RestaurantCard
+                    key={store.id}
+                    id={store.id}
+                    name={store.name}
+                    neighborhood={store.neighborhood}
+                    hours={store.hours}
+                    price={store.price}
+                    count={store.count}
+                    isSpecial={store.isSpecial}
+
+                  />
+                ))}
+              </CardWrapper>
+            </Container>
+            {/* <Wheel items={deals} /> */}
+          </Container>
+
+
+        </div>
+      }
     </div>
   );
 }
