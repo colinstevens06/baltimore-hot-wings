@@ -100,7 +100,7 @@ export default class LogIn extends Component {
                 style={{ border: this.state.warningBorder }}
               />
             </Form.Group>
-            <Form.Text className="text-muted pb-2">{this.state.warningMessage}</Form.Text>
+            <Form.Text className="font-weight-bold text-danger pb-2">{this.state.warningMessage}</Form.Text>
             <button className="bWingButton" onClick={this.handleSubmit}>Submit</button>
           </Form>
         </Row>
