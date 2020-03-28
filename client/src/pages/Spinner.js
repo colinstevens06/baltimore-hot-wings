@@ -11,7 +11,7 @@ import Wheel from "../components/Spinner"
 function SpinnerPage(props) {
 
   // United STATES
-  const deals = ["Coupons", "Promotions", "Random Place", "Tina's House", "Colin's House"]
+  const deals = ["Cardinal Tavern", "Mahaffey's Pub", "Sharky's Bar & Grill", "Hudson Street Stackhouse", "Rocket to Venus", "Frazier's on the Ave", "DogWatch Tavern", "The Horse You Came In On Saloon", "Don't Know Tavern", "Nobles Bar & Grill", ]
 
   return (
     <div>
@@ -24,6 +24,7 @@ function SpinnerPage(props) {
 
           <Wheel items={deals} />
         </Container>
+        
 
 
       </div>

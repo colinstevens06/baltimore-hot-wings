@@ -38,6 +38,7 @@ export default class Wheel extends React.Component {
   modal(){
     const time = this.props.items[this.state.selectedItem]
       // setTimeout(function(time)//{
+        
         alert (time);
   }
 
@@ -57,8 +58,9 @@ export default class Wheel extends React.Component {
         <Col>
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
-            <h1 className="main-header">WINNER WINNER</h1>
-            <div className="main-subhead"><em>Chicken Dinner!!</em></div>
+          <h1 className="main-header">WINNER WINNER</h1>
+          <h1 className="main-header">CHICKEN SPINNER</h1>
+          <h2 className="sub-headline">Where should you eat tonight?</h2>
 
           </div>
         </Col>
