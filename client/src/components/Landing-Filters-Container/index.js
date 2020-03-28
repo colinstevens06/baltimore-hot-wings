@@ -19,6 +19,7 @@ function LandingFiltersContainer(props) {
       <LandingFilterHood
         buttonName={"Neighborhood"}
         hoodFilter={props.hoodFilter}
+        hoodValue={props.hoodValue}
       />
 
     </div>

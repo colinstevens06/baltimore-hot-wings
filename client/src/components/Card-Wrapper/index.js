@@ -5,34 +5,24 @@ import API from "../../utils/API";
 import RestaurantCard from "../Restaurant-Cards";
 
 function CardWrapper(props) {
-  const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
+  const [todaysRestaurants, setTodaysRestaurants] = useState(undefined)
   const [allRestaurants, setAllRestaurants] = useState(undefined)
 
   useEffect(() => {
     getAPI()
-  }, [props.todayValue])
+  }, [])
 
   useEffect(() => {
-    if (todaysRestaurant) {
-      if (props.neighborhoodValue !== "all") {
-
-        const todaysInfo = allRestaurants.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue)
-
-
-
-        setTodaysRestaurant(todaysInfo)
-      } else {
-        getAPI()
-      }
-    }
-  }, [props.neighborhoodValue])
+    changeInfo()
+  }, [props.todayValue, props.neighborhoodValue])
 
   const getAPI = () => {
     API.getRestaurants()
       .then(res => {
+        setAllRestaurants(res.data)
         let stores = res.data
-
         const today = props.todayValue
+
         console.log("STORES")
         console.log(stores)
 
@@ -52,20 +42,92 @@ function CardWrapper(props) {
 
           todaysInfo.push(storeInfo)
         }
-
-        setTodaysRestaurant(todaysInfo)
-        setAllRestaurants(todaysInfo)
-
+        setTodaysRestaurants(todaysInfo)
       })
       .catch(err => console.log(err))
   }
 
+  const changeInfo = () => {
+
+    const today = props.todayValue
+    let todaysInfo = []
+
+    if (allRestaurants) {
+
+      for (let i = 0; i < allRestaurants.length; i++) {
+        let storeInfo = {
+          "id": allRestaurants[i]._id,
+          "name": allRestaurants[i].name,
+          "neighborhood": allRestaurants[i].location.city.neighborhood,
+          "hours": allRestaurants[i].location.hours[today].time,
+          "price": allRestaurants[i].wings[today].price,
+          "count": allRestaurants[i].wings[today].count,
+          "isSpecial": allRestaurants[i].wings[today].isSpecial,
+          "day": allRestaurants[i].wings[today].day
+        }
+
+        todaysInfo.push(storeInfo)
+      }
+
+      console.log("todaysInfo")
+      console.log(todaysInfo[0].neighborhood)
+
+      if (props.neighborhoodValue) {
+
+        if (props.neighborhoodValue === "all") {
+          setTodaysRestaurants(todaysInfo)
+
+
+
+        } else if (props.neighborhoodValue.length >= 2) {
+
+
+
+          console.log("hitting the greater than 1 filter")
+
+          let filterByHood = []
+
+          for (let i = 0; i < props.neighborhoodValue.length; i++) {
+
+            for (let j = 0; j < todaysInfo.length; j++) {
+
+              console.log("todaysInfo inside the for loop")
+              console.log(todaysInfo)
+
+
+              if (props.neighborhoodValue[i] === todaysInfo[j].neighborhood) {
+
+
+                filterByHood.push(todaysInfo[j])
+              }
+
+            }
+          }
+          setTodaysRestaurants(filterByHood)
+
+          // const filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhood
+          // )
+
+          // console.log(filterByHood)
+
+          // setTodaysRestaurants(filterByHood)
+
+        } else {
+          console.log("hitting the else filter underneath the greater than 1 filter")
+          const filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue.toString())
+          setTodaysRestaurants(filterByHood)
+        }
+
+      }
+    }
+  }
+
   return (
     <div>
-      {todaysRestaurant &&
+      {todaysRestaurants &&
 
         <div className="table-wrapper">
-          {todaysRestaurant.map(store => (
+          {todaysRestaurants.map(store => (
             <RestaurantCard
               key={store.id}
               id={store.id}

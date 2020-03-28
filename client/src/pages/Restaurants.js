@@ -11,7 +11,7 @@ import LandingSubHeroContainer from "../components/Landing-Sub-Hero-Container"
 function RestaurantPage(props) {
 
   const [today, setToday] = useState(undefined)
-  const [neighborhood, setNeighborhood] = useState("all")
+  const [neighborhood, setNeighborhood] = useState(undefined)
 
   useEffect(() => {
     const findDate = new Date().getDay()
@@ -43,6 +43,7 @@ function RestaurantPage(props) {
                 todayValue={today}
                 click={dayOfWeekFilter}
                 hoodFilter={neighborHoodFilter}
+                hoodValue={neighborhood}
               />
 
               <CardWrapper

@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import ToggleButton from 'react-bootstrap/ToggleButton'
 
 function LandingFilterHood(props) {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState([]);
+
+  const handleChange = (val) => setValue(val);
 
   return (
 
@@ -19,25 +24,21 @@ function LandingFilterHood(props) {
       <Collapse className="mt-3" in={open}>
         <div id="example-collapse-text">
 
-          <Button
-            onClick={() => props.hoodFilter("Canton")}
-          >Canton</Button>
+          <ToggleButtonGroup type="checkbox" value={props.hoodValue} onChange={props.hoodFilter}>
 
-          <Button
-            onClick={() => props.hoodFilter("Federal Hill")}
-          >Federal Hill</Button>
+            <ToggleButton value={"Canton"}>Canton</ToggleButton>
+            <ToggleButton value={"Federal Hill"}>Federal Hill</ToggleButton>
+            <ToggleButton value={"Hampden"}>Hampden</ToggleButton>
+            <ToggleButton value={"Fells Point"}>Fells Point</ToggleButton>
 
-          <Button
-            onClick={() => props.hoodFilter("Hampden")}
-          >Hampden</Button>
+          </ToggleButtonGroup>
 
-          <Button
-            onClick={() => props.hoodFilter("Fells Point")}
-          >Fells Point</Button>
-
+          
+          <br />
           <Button
             onClick={() => props.hoodFilter("all")}
           >Show All</Button>
+
 
         </div>
       </Collapse>

@@ -26,6 +26,7 @@ function LandingSubHeroContainer(props) {
           <LandingFiltersContainer
             click={props.click}
             hoodFilter={props.hoodFilter}
+            hoodValue={props.hoodValue}
           />
 
         </Col>
