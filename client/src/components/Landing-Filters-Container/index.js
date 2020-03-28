@@ -1,6 +1,7 @@
 import React from "react";
 
-import LandingFilters from "../Landing-Filters"
+import LandingFilterDay from "../Landing-Filter-Day"
+import LandingFilterHood from "../Landing-Filter-Neighborhood"
 
 
 
@@ -10,9 +11,14 @@ function LandingFiltersContainer(props) {
 
     <div>
 
-      <LandingFilters
+      <LandingFilterDay
         buttonName={"Day of Week"}
         click={props.click}
+      />
+
+      <LandingFilterHood
+        buttonName={"Neighborhood"}
+        hoodFilter={props.hoodFilter}
       />
 
     </div>

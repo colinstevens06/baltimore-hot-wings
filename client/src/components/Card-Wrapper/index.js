@@ -6,8 +6,28 @@ import RestaurantCard from "../Restaurant-Cards";
 
 function CardWrapper(props) {
   const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
+  const [allRestaurants, setAllRestaurants] = useState(undefined)
 
   useEffect(() => {
+    getAPI()
+  }, [props.todayValue])
+
+  useEffect(() => {
+    if (todaysRestaurant) {
+      if (props.neighborhoodValue !== "all") {
+
+        const todaysInfo = allRestaurants.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue)
+
+
+
+        setTodaysRestaurant(todaysInfo)
+      } else {
+        getAPI()
+      }
+    }
+  }, [props.neighborhoodValue])
+
+  const getAPI = () => {
     API.getRestaurants()
       .then(res => {
         let stores = res.data
@@ -34,9 +54,11 @@ function CardWrapper(props) {
         }
 
         setTodaysRestaurant(todaysInfo)
+        setAllRestaurants(todaysInfo)
+
       })
       .catch(err => console.log(err))
-  }, [props.todayValue])
+  }
 
   return (
     <div>

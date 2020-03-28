@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API.js";
 
 // layout features
 import Container from 'react-bootstrap/Container';
@@ -12,6 +11,7 @@ import LandingSubHeroContainer from "../components/Landing-Sub-Hero-Container"
 function RestaurantPage(props) {
 
   const [today, setToday] = useState(undefined)
+  const [neighborhood, setNeighborhood] = useState("all")
 
   useEffect(() => {
     const findDate = new Date().getDay()
@@ -22,6 +22,12 @@ function RestaurantPage(props) {
     setToday(input)
   }
 
+  const neighborHoodFilter = input => {
+    console.log("click heard at restaurants.js")
+    console.log(input)
+    setNeighborhood(input)
+  }
+
   return (
     <div>
       {(today || today === 0) &&
@@ -30,22 +36,25 @@ function RestaurantPage(props) {
             <HeroLanding />
           </Container>
 
-
           <Container fluid className="py-4 dark-bg">
             <Container>
+
               <LandingSubHeroContainer
                 todayValue={today}
-                click={dayOfWeekFilter} />
+                click={dayOfWeekFilter}
+                hoodFilter={neighborHoodFilter}
+              />
 
-              <CardWrapper todayValue={today} />
+              <CardWrapper
+                todayValue={today}
+                neighborhoodValue={neighborhood}
+              />
 
             </Container>
           </Container>
 
-
         </div>
       }
-
 
     </div>
   );

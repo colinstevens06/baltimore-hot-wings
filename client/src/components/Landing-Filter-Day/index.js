@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
 
-function LandingFilters(props) {
+function LandingFilterDay(props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -52,4 +52,4 @@ function LandingFilters(props) {
   )
 }
 
-export default LandingFilters
+export default LandingFilterDay
