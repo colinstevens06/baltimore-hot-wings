@@ -15,17 +15,12 @@ function RestaurantPage(props) {
 
   useEffect(() => {
     const findDate = new Date().getDay()
-
     setToday(findDate)
-
-
   }, [])
 
   const dayOfWeekFilter = input => {
     setToday(input)
   }
-
-
 
   return (
     <div>
@@ -38,7 +33,9 @@ function RestaurantPage(props) {
 
           <Container fluid className="py-4 dark-bg">
             <Container>
-              <LandingSubHeroContainer click={dayOfWeekFilter} />
+              <LandingSubHeroContainer
+                todayValue={today}
+                click={dayOfWeekFilter} />
 
               <CardWrapper todayValue={today} />
 
