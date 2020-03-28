@@ -16,18 +16,18 @@ function Footer() {
     <div>
       <Row>
         <Col>
-        <footer>
-          <h4 className="d-inline-block"></h4>
-          <Navbar fixed="bottom" collapseOnSelect expand="lg" bg="dark" variant="dark">
-        
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <footer>
+            <h4 className="d-inline-block"></h4>
+            <Navbar fixed="bottom" collapseOnSelect expand="lg" bg="dark" variant="dark">
 
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <p align="center">&copy;2020 CTG Industries</p>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                  <p align="center">&copy;2020 CTG Industries</p>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
 
           </footer>
         </Col>
