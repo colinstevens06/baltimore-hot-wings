@@ -20,9 +20,9 @@ export default class LogIn extends Component {
   }
 
   checkLogin() {
-    if(this.props.loggedInStatus === "LOGGED_IN") {
+    if (this.props.loggedInStatus === "LOGGED_IN") {
       this.props.history.push('/admin');
-    } 
+    }
   }
 
   componentDidMount() {
@@ -50,7 +50,7 @@ export default class LogIn extends Component {
 
       //call our api to check the login data, async
       const results = await API.login(this.state.username, this.state.password);
-      
+
       //check the results and move us on or show errors
       if (results === 'success') {
         this.props.handleLogin('LOGGED_IN');
@@ -70,41 +70,47 @@ export default class LogIn extends Component {
   //render our page
   render() {
     return (
-      <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
-        <Row className="justify-content-center">
-          <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
-        </Row>
-        <Row className="justify-content-center">
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email Address</Form.Label>
-              <Form.Control
-                type="email"
-                name="username"
-                placeholder="Enter Email"
-                onChange={this.handleInputChange}
-                style={{ border: this.state.warningBorder }}
-              />
-              <Form.Text className="text-muted">
-                We will never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+      <div className="wings-bg-image">
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={this.handleInputChange}
-                style={{ border: this.state.warningBorder }}
-              />
-            </Form.Group>
-            <Form.Text className="font-weight-bold text-danger pb-2">{this.state.warningMessage}</Form.Text>
-            <button className="bWingButton" onClick={this.handleSubmit}>Submit</button>
-          </Form>
-        </Row>
-      </Container>
+        <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
+
+          <Row className="justify-content-center">
+            <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
+          </Row>
+          <Row className="justify-content-center">
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email Address</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="username"
+                  placeholder="Enter Email"
+                  onChange={this.handleInputChange}
+                  style={{ border: this.state.warningBorder }}
+                />
+                <Form.Text className="text-muted">
+                  We will never share your email with anyone else.
+              </Form.Text>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.handleInputChange}
+                  style={{ border: this.state.warningBorder }}
+                />
+              </Form.Group>
+              <Form.Text className="font-weight-bold text-danger pb-2">{this.state.warningMessage}</Form.Text>
+              <button className="bWingButton" onClick={this.handleSubmit}>Submit</button>
+            </Form>
+          </Row>
+
+        </Container>
+      </div>
+
     );
   }
 }

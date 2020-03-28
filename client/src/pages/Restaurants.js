@@ -5,89 +5,43 @@ import API from "../utils/API.js";
 import Container from 'react-bootstrap/Container';
 
 // importing components
-import HeroLanding from "../components/Hero-Landing"
-import RestaurantCard from "../components/Restaurant-Cards/index.js";
+import HeroLanding from "../components/Landing-Hero"
 import CardWrapper from "../components/Card-Wrapper"
-import Wheel from "../components/Spinner"
+import LandingSubHeroContainer from "../components/Landing-Sub-Hero-Container"
+
 function RestaurantPage(props) {
 
-  // United STATES
-  const [restaurants, setRestaurants] = useState(undefined)
-  const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
-  const deals = ["coupons", "promotions", "randomPlace"]
+  const [today, setToday] = useState(undefined)
 
-  // initializing with the data from the db
   useEffect(() => {
+    const findDate = new Date().getDay()
 
-    API.getRestaurants()
-      .then(res => {
-        let stores = res.data
-        setRestaurants(res.data)
+    setToday(findDate)
 
-        const today = new Date().getDay()
-        console.log("STORES")
-        console.log(stores)
 
-        let todaysInfo = []
+  }
 
-        for (let i = 0; i < stores.length; i++) {
-          let storeInfo = {
-            "id": stores[i]._id,
-            "name": stores[i].name,
-            "neighborhood": stores[i].location.city.neighborhood,
-            "hours": stores[i].location.hours[today].time,
-            "price": stores[i].wings[today].price,
-            "count": stores[i].wings[today].count,
-            "isSpecial": stores[i].wings[today].isSpecial,
-            "day": stores[i].wings[today].day
-          }
-
-          todaysInfo.push(storeInfo)
-
-        }
-
-        setTodaysRestaurant(todaysInfo)
-      })
-      .catch(err => console.log(err))
-    console.log(restaurants)
-  }, [])
-
+  )
 
   return (
     <div>
-
-      {todaysRestaurant &&
+      {today &&
         <div>
-
           <Container>
             <HeroLanding />
           </Container>
           <Container fluid className="py-4 dark-bg">
             <Container>
-              <h2 className="tile-header">{todaysRestaurant[0].day}'s Prices</h2>
-              <p className="tile-subhead"><em>Specials marked in orange</em></p>
-              <CardWrapper>
-                {todaysRestaurant.map(store => (
-                  <RestaurantCard
-                    key={store.id}
-                    id={store.id}
-                    name={store.name}
-                    neighborhood={store.neighborhood}
-                    hours={store.hours}
-                    price={store.price}
-                    count={store.count}
-                    isSpecial={store.isSpecial}
-
-                  />
-                ))}
-              </CardWrapper>
+              <LandingSubHeroContainer />
+              <CardWrapper todayValue={today} />
             </Container>
-            {/* <Wheel items={deals} /> */}
           </Container>
 
 
         </div>
       }
+
+
     </div>
   );
 }

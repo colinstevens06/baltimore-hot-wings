@@ -12,8 +12,8 @@ function HeroLanding() {
         <Col>
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
-            <h1 className="main-header text-white">BMore Wings App</h1>
-            <div className="main-subhead text-white"><em>All of Baltimore's wings deals in one place</em></div>
+            <h1 className="main-header">BMore Wings App</h1>
+            <div className="main-subhead"><em>All of Baltimore's wings deals in one place</em></div>
 
           </div>
         </Col>
