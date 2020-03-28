@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button'
 import LandingFiltersContainer from "../Landing-Filters-Container"
 
 
-function LandingSubHeroContainer() {
+function LandingSubHeroContainer(props) {
 
   const [restaurants, setRestaurants] = useState(undefined)
   const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
@@ -111,7 +111,7 @@ function LandingSubHeroContainer() {
             <Col xs={6}>
 
               <LandingFiltersContainer
-                click={dayOfWeekFilter}
+                click={props.click}
               />
 
               <Button onClick={() => sortByPrice()}>Sory by Price</Button>

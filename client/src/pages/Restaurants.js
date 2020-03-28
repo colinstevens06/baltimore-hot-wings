@@ -19,21 +19,29 @@ function RestaurantPage(props) {
     setToday(findDate)
 
 
+  }, [])
+
+  const dayOfWeekFilter = input => {
+    setToday(input)
   }
 
-  )
+
 
   return (
     <div>
-      {today &&
+      {(today || today === 0) &&
         <div>
           <Container>
             <HeroLanding />
           </Container>
+
+
           <Container fluid className="py-4 dark-bg">
             <Container>
-              <LandingSubHeroContainer />
+              <LandingSubHeroContainer click={dayOfWeekFilter} />
+
               <CardWrapper todayValue={today} />
+
             </Container>
           </Container>
 
