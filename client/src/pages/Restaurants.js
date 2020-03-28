@@ -19,6 +19,7 @@ function RestaurantPage(props) {
   }, [])
 
   const dayOfWeekFilter = input => {
+    console.log("day of week change")
     setToday(input)
   }
 
