@@ -20,14 +20,14 @@ function LandingFiltersContainer(props) {
       </Row>
       <Row>
 
-        <Col sm={6}>
+        <Col xs={6}>
           <LandingFilterDay
             buttonName={"Day of Week"}
             click={props.click}
           />
 
         </Col>
-        <Col sm={6}>
+        <Col xs={6}>
 
           <LandingFilterHood
             buttonName={"Neighborhood"}

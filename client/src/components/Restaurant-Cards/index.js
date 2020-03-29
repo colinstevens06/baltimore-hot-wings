@@ -8,8 +8,8 @@ import Card from 'react-bootstrap/Card'
 function RestaurantCard(props) {
   return (
     <div>
-      <Card style={{ width: '18rem' }}
-        className={props.isSpecial ? ("isSpecial") : ("")}
+      <Card
+        className={props.isSpecial ? ("isSpecial store-card") : ("store-card")}
       >
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
@@ -27,6 +27,27 @@ function RestaurantCard(props) {
           </Link>
         </Card.Body>
       </Card>
+
+
+      <div
+        className={props.isSpecial ? ("store-row isSpecial") : ("store-row")}
+      >
+        <div className="store-row__1">
+          <div className="store-row__head"><strong>{props.name}</strong>, {props.neighborhood}</div>
+        </div>
+
+        <div className="store-row__2">
+          <div className={"store-row__price"}>${props.price} for {props.count}</div>
+          <Link to={"restaurants/" + props.id}>
+            <button className="btn btn-restaurant">
+              Link to full info
+            </button>
+
+          </Link>
+        </div>
+      </div>
+
+
     </div>
   )
 }
