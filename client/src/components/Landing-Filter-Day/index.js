@@ -19,33 +19,40 @@ function LandingFilterDay(props) {
       <Collapse className="mt-3" in={open}>
         <div id="example-collapse-text">
 
-          <Button
+          <button
             onClick={() => props.click(0)}
-          >Sunday</Button>
+            className="btn btn-filter"
+          >Sunday</button>
 
-          <Button
+          <button
             onClick={() => props.click(1)}
-          >Monday</Button>
+            className="btn btn-filter"
+          >Monday</button>
 
-          <Button
+          <button
             onClick={() => props.click(2)}
-          >Tuesday</Button>
+            className="btn btn-filter"
+          >Tuesday</button>
 
-          <Button
+          <button
             onClick={() => props.click(3)}
-          >Wednesday</Button>
+            className="btn btn-filter"
+          >Wednesday</button>
 
-          <Button
+          <button
             onClick={() => props.click(4)}
-          >Thursday</Button>
+            className="btn btn-filter"
+          >Thursday</button>
 
-          <Button
+          <button
             onClick={() => props.click(5)}
-          >Friday</Button>
+            className="btn btn-filter"
+          >Friday</button>
 
-          <Button
+          <button
             onClick={() => props.click(6)}
-          >Saturday</Button>
+            className="btn btn-filter"
+          >Saturday</button>
         </div>
       </Collapse>
     </div>

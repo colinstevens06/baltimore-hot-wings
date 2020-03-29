@@ -26,23 +26,40 @@ function LandingFilterHood(props) {
 
           <ToggleButtonGroup type="checkbox" value={props.hoodValue} onChange={props.hoodFilter}>
 
-            <ToggleButton value={"Canton"}>Canton</ToggleButton>
-            <ToggleButton value={"Federal Hill"}>Federal Hill</ToggleButton>
-            <ToggleButton value={"Hampden"}>Hampden</ToggleButton>
-            <ToggleButton value={"Fells Point"}>Fells Point</ToggleButton>
+            <ToggleButton
+              value={"Canton"}
+              className="btn btn-filter"
+
+            >Canton</ToggleButton>
+
+            <ToggleButton
+              value={"Federal Hill"}
+              className="btn btn-filter"
+            >Federal Hill</ToggleButton>
+
+            <ToggleButton
+              value={"Hampden"}
+              className="btn btn-filter"
+            >Hampden</ToggleButton>
+            <ToggleButton
+              value={"Fells Point"}
+              className="btn btn-filter"
+            >Fells Point</ToggleButton>
 
           </ToggleButtonGroup>
 
-          
+
           <br />
           <Button
             onClick={() => props.hoodFilter("all")}
+            className="btn btn-filter"
+
           >Show All</Button>
 
 
         </div>
       </Collapse>
-    </div>
+    </div >
   )
 }
 
