@@ -314,4 +314,17 @@ td {
           box-shadow: none;
   margin: 0;
 }
+
+@media only screen and (max-width: 415px) {
+  .landing-sub-head-card {
+    background: transparent;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */
