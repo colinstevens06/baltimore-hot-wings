@@ -9,7 +9,7 @@ function HeroLanding() {
   return (
     <div>
       <Row>
-        <Col>
+        <Col className="white-bg">
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
             <h1 className="main-header">BMore Wings App</h1>
