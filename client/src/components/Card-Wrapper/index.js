@@ -75,11 +75,7 @@ function CardWrapper(props) {
         if (props.neighborhoodValue === "all") {
           setTodaysRestaurants(todaysInfo)
 
-
-
         } else if (props.neighborhoodValue.length >= 2) {
-
-
 
           console.log("hitting the greater than 1 filter")
 
@@ -102,14 +98,6 @@ function CardWrapper(props) {
             }
           }
           setTodaysRestaurants(filterByHood)
-
-          // const filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhood
-          // )
-
-          // console.log(filterByHood)
-
-          // setTodaysRestaurants(filterByHood)
-
         } else {
           console.log("hitting the else filter underneath the greater than 1 filter")
           const filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue.toString())
