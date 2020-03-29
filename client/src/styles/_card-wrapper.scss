@@ -1,8 +1,15 @@
-.table-wrapper {
+.table-wrapper, .filter-wrapper {
   display: flex;
   height: 100%;
   flex-flow: row wrap;
   padding: 10px;
   justify-content: space-evenly;
   align-content: flex-start;
+}
+
+@media only screen and (max-width: 415px) {
+
+  .filter-wrapper {
+    padding: 0;
+  }
 }

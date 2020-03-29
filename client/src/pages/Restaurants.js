@@ -42,7 +42,7 @@ function RestaurantPage(props) {
             </Container>
           </Container>
 
-          <Container fluid className="py-4 dark-bg">
+          <Container fluid className="sub-head-container dark-bg">
             <Container>
 
               <LandingSubHeroContainer
