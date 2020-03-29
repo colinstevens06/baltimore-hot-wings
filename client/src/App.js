@@ -46,11 +46,14 @@ export default class App extends Component {
               exact
               path={"/login"}
               render={props => (
-                <LogIn
-                  {...props}
-                  handleLogin={this.handleLogin}
-                  loggedInStatus={this.loggedInStatus}
-                />
+                <>
+                  <Nav />
+                  <LogIn
+                    {...props}
+                    handleLogin={this.handleLogin}
+                    loggedInStatus={this.loggedInStatus}
+                  />
+                </>
               )}
             >
             </Route>
@@ -76,6 +79,7 @@ export default class App extends Component {
               <IndividualPage />
             </Route>
             <Route exact path="/spinner">
+              <Nav />
               <SpinnerPage />
             </Route>
             <Route>

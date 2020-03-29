@@ -44,8 +44,28 @@ nav {
   }
 }
 
-.hero-image {
+.landing-hero-image {
   height: 300px;
+}
+
+.wings-hero-image {
+  background-image: url("../assets/images/hero/landing-hero-desktop.jpg");
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-container {
+  padding: 0;
+}
+
+.white-bg {
+  text-align: center;
+  background-color: white;
+  margin: 12px 0;
+  opacity: .8;
+  border-radius: 10px;
 }
 
 .main-header {
@@ -67,10 +87,18 @@ nav {
 
 @media only screen and (max-width: 415px) {
   .main-text-box {
-    padding-bottom: 35px;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   .main-header {
     display: none;
+  }
+  .landing-hero-image {
+    display: none;
+  }
+  .wings-hero-image {
+    background-image: url("../assets/images/hero/landing-hero-mobile.jpg");
   }
 }
 
@@ -149,7 +177,7 @@ nav {
 .tile-header {
   color: #ffffff;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.6;
 }
 
@@ -245,10 +273,11 @@ td {
 
 .wings-bg-image {
   background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
-  height: 100vh;
-  width: 100%;
+  height: 135vh;
+  width: 100vw;
   position: absolute;
   top: 0;
+  z-index: -1;
 }
 
 .bWingBorder {
@@ -277,11 +306,58 @@ td {
           transform: translateY(4px);
 }
 
+.hero-image {
+  width: 300px;
+}
+
 .dropdown {
   margin-left: auto;
   margin-right: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.btn-filter {
+  font-size: .65rem;
+  background-color: #ffffff;
+  border-color: #3f75d8;
+  color: #3f75d8;
+}
+
+.btn-filter:hover {
+  background-color: #3f75d8;
+  color: #ffffff;
+}
+
+.btn-filter:focus {
+  background-color: #d8623f;
+  color: #ffffff;
+}
+
+.btn-filter:active {
+  background-color: #9e3718;
+  color: #ffffff;
+}
+
+.landing-sub-head-card {
+  background: transparent;
+  height: 120px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 415px) {
+  .landing-sub-head-card {
+    background: transparent;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

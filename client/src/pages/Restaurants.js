@@ -33,8 +33,13 @@ function RestaurantPage(props) {
     <div>
       {(today || today === 0) &&
         <div>
-          <Container>
-            <HeroLanding />
+          <Container fluid className="hero-container">
+
+            <div className="wings-hero-image"></div>
+            <Container>
+              <HeroLanding />
+
+            </Container>
           </Container>
 
           <Container fluid className="py-4 dark-bg">
@@ -58,7 +63,7 @@ function RestaurantPage(props) {
         </div>
       }
 
-    </div>
+    </div >
   );
 }
 

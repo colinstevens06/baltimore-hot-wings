@@ -70,7 +70,9 @@ export default class LogIn extends Component {
   //render our page
   render() {
     return (
-      <div className="wings-bg-image">
+      <div>
+        <div className="wings-bg-image"></div>
+
 
         <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
 
@@ -110,6 +112,8 @@ export default class LogIn extends Component {
 
         </Container>
       </div>
+
+
 
     );
   }

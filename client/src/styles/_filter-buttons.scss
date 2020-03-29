@@ -1,0 +1,23 @@
+.btn-filter {
+  font-size: .65rem;
+  background-color: #ffffff;
+  border-color: $secondaryColor;
+  color: $secondaryColor;
+  &:hover {
+    background-color: $secondaryColor;
+    color: #ffffff;
+  }
+  &:focus {
+    background-color: $primaryColor;
+    color: #ffffff;
+  }
+  &:active {
+    background-color: $primaryColorDark;
+    color: #ffffff;
+  }
+}
+
+
+@media only screen and (max-width: 415px) {
+
+}
