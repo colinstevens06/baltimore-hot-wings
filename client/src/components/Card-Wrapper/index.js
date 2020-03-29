@@ -67,10 +67,8 @@ function CardWrapper(props) {
         }
 
         todaysInfo.push(storeInfo)
+        setTodaysRestaurants(todaysInfo)
       }
-
-      console.log("todaysInfo")
-      console.log(todaysInfo[0].neighborhood)
 
       if (props.neighborhoodValue) {
 
