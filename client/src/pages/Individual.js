@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 // layout features
 import Container from 'react-bootstrap/Container';
-import IndividualHero from "../components/Hero-Individual/index.js";
+import IndividualHero from "../components/Individual-Hero/index.js";
 import StoreInfo from "../components/Table-Individual"
 import RestaurantDropdown from "../components/Resturant-Dropdown"
 

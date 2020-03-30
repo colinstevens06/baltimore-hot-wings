@@ -4,7 +4,7 @@ import WingsLogo from '../../assets/images/logos/bmore-wings-logo-large.png'
 //layout
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Modal from "react-bootstrap/Modal";
+
 
 
 import './style.css';
@@ -39,7 +39,7 @@ export default class Wheel extends React.Component {
     const time = this.props.items[this.state.selectedItem]
       // setTimeout(function(time)//{
         
-        alert (time);
+        // alert (time);
   }
 
   render() {

@@ -1,94 +1,69 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API.js";
 
 // layout features
 import Container from 'react-bootstrap/Container';
 
 // importing components
-import HeroLanding from "../components/Hero-Landing"
-import RestaurantCard from "../components/Restaurant-Cards/index.js";
+import HeroLanding from "../components/Landing-Hero"
 import CardWrapper from "../components/Card-Wrapper"
-import Wheel from "../components/Spinner"
+import LandingSubHeroContainer from "../components/Landing-Sub-Hero-Container"
+
 function RestaurantPage(props) {
 
-  // United STATES
-  const [restaurants, setRestaurants] = useState(undefined)
-  const [todaysRestaurant, setTodaysRestaurant] = useState(undefined)
-  const deals = ["coupons", "promotions", "randomPlace"]
+  const [today, setToday] = useState(undefined)
+  const [neighborhood, setNeighborhood] = useState(undefined)
 
-  // initializing with the data from the db
   useEffect(() => {
-
-    API.getRestaurants()
-      .then(res => {
-        let stores = res.data
-        setRestaurants(res.data)
-
-        const today = new Date().getDay()
-        console.log("STORES")
-        console.log(stores)
-
-        let todaysInfo = []
-
-        for (let i = 0; i < stores.length; i++) {
-          let storeInfo = {
-            "id": stores[i]._id,
-            "name": stores[i].name,
-            "neighborhood": stores[i].location.city.neighborhood,
-            "hours": stores[i].location.hours[today].time,
-            "price": stores[i].wings[today].price,
-            "count": stores[i].wings[today].count,
-            "isSpecial": stores[i].wings[today].isSpecial,
-            "day": stores[i].wings[today].day
-          }
-
-          todaysInfo.push(storeInfo)
-
-        }
-
-        setTodaysRestaurant(todaysInfo)
-      })
-      .catch(err => console.log(err))
-    console.log(restaurants)
+    const findDate = new Date().getDay()
+    setToday(findDate)
   }, [])
 
+  const dayOfWeekFilter = input => {
+    console.log("day of week change")
+    setToday(input)
+  }
+
+  const neighborHoodFilter = input => {
+    console.log("click heard at restaurants.js")
+    console.log(input)
+    setNeighborhood(input)
+  }
 
   return (
     <div>
-
-      {todaysRestaurant &&
+      {(today || today === 0) &&
         <div>
+          <Container fluid className="hero-container">
 
-          <Container>
-            <HeroLanding />
-          </Container>
-          <Container fluid className="py-4 dark-bg">
+            <div className="wings-hero-image"></div>
             <Container>
-              <h2 className="tile-header">{todaysRestaurant[0].day}'s Prices</h2>
-              <p className="tile-subhead"><em>Specials marked in orange</em></p>
-              <CardWrapper>
-                {todaysRestaurant.map(store => (
-                  <RestaurantCard
-                    key={store.id}
-                    id={store.id}
-                    name={store.name}
-                    neighborhood={store.neighborhood}
-                    hours={store.hours}
-                    price={store.price}
-                    count={store.count}
-                    isSpecial={store.isSpecial}
+              <HeroLanding />
 
-                  />
-                ))}
-              </CardWrapper>
             </Container>
-            {/* <Wheel items={deals} /> */}
           </Container>
 
+          <Container fluid className="sub-head-container dark-bg">
+            <Container>
+
+              <LandingSubHeroContainer
+                todayValue={today}
+                click={dayOfWeekFilter}
+                hoodFilter={neighborHoodFilter}
+                hoodValue={neighborhood}
+              />
+
+              <CardWrapper
+                todayValue={today}
+                neighborhoodValue={neighborhood}
+              />
+
+            </Container>
+          </Container>
 
         </div>
       }
-    </div>
+
+    </div >
   );
 }
 

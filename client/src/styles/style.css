@@ -44,8 +44,28 @@ nav {
   }
 }
 
-.hero-image {
+.landing-hero-image {
   height: 300px;
+}
+
+.wings-hero-image {
+  background-image: url("../assets/images/hero/landing-hero-desktop.jpg");
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-container {
+  padding: 0;
+}
+
+.white-bg {
+  text-align: center;
+  background-color: white;
+  margin: 12px 0;
+  opacity: .8;
+  border-radius: 10px;
 }
 
 .main-header {
@@ -67,14 +87,25 @@ nav {
 
 @media only screen and (max-width: 415px) {
   .main-text-box {
-    padding-bottom: 35px;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   .main-header {
     display: none;
   }
+  .landing-hero-image {
+    display: none;
+  }
+  .wings-hero-image {
+    background-image: url("../assets/images/hero/landing-hero-mobile.jpg");
+  }
+  .hero-container {
+    display: none;
+  }
 }
 
-.table-wrapper {
+.table-wrapper, .filter-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,6 +122,12 @@ nav {
       align-content: flex-start;
 }
 
+@media only screen and (max-width: 415px) {
+  .filter-wrapper {
+    padding: 0;
+  }
+}
+
 .card {
   background-image: radial-gradient(farthest-corner at 10px 10px, #ffffff, #f5f5f5);
   color: #000000;
@@ -101,7 +138,7 @@ nav {
   height: 240px;
   margin: 1rem;
   position: relative;
-  width: 200px;
+  width: 18rem;
   text-align: center;
 }
 
@@ -149,7 +186,7 @@ nav {
 .tile-header {
   color: #ffffff;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.3rem;
   line-height: 1.6;
 }
 
@@ -168,32 +205,73 @@ nav {
   margin-bottom: 0;
 }
 
+.store-row {
+  display: none;
+}
+
+.sub-head-container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 @media only screen and (max-width: 415px) {
-  .card {
-    width: 150px;
-    height: 275px;
-    padding-top: 12px;
+  .sub-head-container {
+    padding: 0;
   }
-  .card-title {
-    font-size: 26px;
+  .table-wrapper {
+    padding: 0;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    width: 100%;
   }
-  .card-neighborhood {
-    font-size: 20px;
+  .store-card {
+    display: none;
   }
-  .card-price {
-    font-size: 24px;
+  .store-row {
+    display: inline-block;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    background: #ffffff;
+    padding: 12px 16px;
   }
-  .card > .content {
-    font-size: 12px;
+  .store-row__head {
+    display: block;
+    margin: 0 auto;
   }
-  .card > .content > ul > li {
-    margin-top: 4px;
+  .store-row__price {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
-  .tile-header {
-    color: #ffffff;
+  .store-row__1 {
     text-align: center;
-    font-size: 2rem;
-    line-height: 1.6;
+  }
+  .store-row__2 {
+    margin-top: 10px;
+  }
+  .btn-restaurant {
+    background-color: #9e3718;
+    color: #ffffff;
+    border: 1px solid #9e3718;
+    float: right;
+    font-size: .75rem;
+  }
+  .btn-restaurant:hover {
+    background-color: #ffffff;
+    color: #9e3718;
+  }
+  .isSpecial {
+    background-image: radial-gradient(farthest-corner at 10px 10px, #d8623f, #9e3718);
+    color: #ffffff;
+  }
+  .isSpecial .btn {
+    color: #9e3718;
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+  .isSpecial .btn:hover {
+    color: #d8623f;
   }
 }
 
@@ -243,11 +321,103 @@ td {
   }
 }
 
+.wings-bg-image {
+  background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
+  height: 135vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.bWingBorder {
+  border: 2px  solid #d8623f;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.bWingButton {
+  padding: 10px 15px;
+  color: #d8623f;
+  border-radius: 10px;
+  border: 2px solid  #d8623f;
+  text-align: center;
+}
+
+.bWingButton:hover {
+  background-color: #d8623f;
+  color: black;
+}
+
+.bWingButton:active {
+  background-color: #1c53b9;
+  color: white;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.hero-image {
+  width: 300px;
+}
+
 .dropdown {
   margin-left: auto;
   margin-right: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.btn-filter {
+  font-size: .65rem;
+  background-color: #ffffff;
+  border-color: #3f75d8;
+  color: #3f75d8;
+}
+
+.btn-filter:hover {
+  background-color: #3f75d8;
+  color: #ffffff;
+}
+
+.btn-filter:focus {
+  background-color: #d8623f;
+  color: #ffffff;
+}
+
+.btn-filter:active {
+  background-color: #9e3718;
+  color: #ffffff;
+}
+
+.landing-sub-head-card, .landing-sub-head-card-button {
+  background: transparent;
+  height: 120px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 0;
+  width: 18rem;
+}
+
+@media only screen and (max-width: 415px) {
+  .landing-sub-head-card {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 0;
+  }
+  .landing-sub-head-card-button {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 0;
+    width: 9rem;
+  }
+  .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=style.css.map */

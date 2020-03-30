@@ -8,9 +8,10 @@ import Nav from 'react-bootstrap/Nav'
 function Navigation() {
   return (
     <div>
-
       <Navbar collapseOnSelect expand="lg" variant="dark">
-        <img className="img-fluid nav-image" src={WingsLogo} alt="BMore Wings Logo" />
+        <a href='/'>
+          <img className="img-fluid nav-image" src={WingsLogo} alt="BMore Wings Logo" />
+        </a>
         <Navbar.Brand href="/">BMore Wing App</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -18,14 +19,13 @@ function Navigation() {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/spinner">Spinner</Nav.Link>
+            <Nav.Link href="/login">Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
     </div>
 
   )
-
 }
 
 export default Navigation;
