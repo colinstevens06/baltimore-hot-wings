@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Modal from "react-bootstrap/Modal";
 
-
-// layout features
-import Container from 'react-bootstrap/Container';
 
 // importing components
 
@@ -22,17 +18,8 @@ function SpinnerPage(props) {
 
 
        
-        <Modal show={false}>
-          
-    <Modal.Header>Hi</Modal.Header>
-    <Modal.Body> <Container fluid className="py-4 dark-bg">
-
-<Wheel items={deals} />
-</Container></Modal.Body>
-
-    <Modal.Footer>This is the footer</Modal.Footer>
-  </Modal>
         
+  <Wheel items={deals} />     
 
 
       </div>
