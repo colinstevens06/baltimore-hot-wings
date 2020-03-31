@@ -14,17 +14,22 @@ function CardWrapper(props) {
 
   useEffect(() => {
     changeInfo()
-  }, [props.todayValue, props.neighborhoodValue])
+  }, [props.todayValue, props.neighborhoodValue, props.nameSortValue])
 
+  useEffect(() => {
+    if (todaysRestaurants) {
+      sortByPrice(todaysRestaurants)
+      console.log(todaysRestaurants)
+    }
+  }, [props.priceSortValue, todaysRestaurants])
+
+  // get all the info from the API
   const getAPI = () => {
     API.getRestaurants()
       .then(res => {
         setAllRestaurants(res.data)
         let stores = res.data
         const today = props.todayValue
-
-        console.log("STORES")
-        console.log(stores)
 
         let todaysInfo = []
 
@@ -41,7 +46,19 @@ function CardWrapper(props) {
           }
 
           todaysInfo.push(storeInfo)
+
         }
+
+        todaysInfo.sort(function (a, b) {
+          if (b.name.toLowerCase() < a.name.toLowerCase()) {
+            return 1
+          } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
+            return -1
+          } else {
+            return 0
+          }
+        })
+
         setTodaysRestaurants(todaysInfo)
       })
       .catch(err => console.log(err))
@@ -67,6 +84,10 @@ function CardWrapper(props) {
         }
 
         todaysInfo.push(storeInfo)
+
+        // // sort by name
+        todaysInfo = sortByName(todaysInfo, props.nameSortValue)
+
         setTodaysRestaurants(todaysInfo)
       }
 
@@ -76,35 +97,90 @@ function CardWrapper(props) {
           setTodaysRestaurants(todaysInfo)
 
         } else if (props.neighborhoodValue.length >= 2) {
-
-          console.log("hitting the greater than 1 filter")
-
+          // going to push restaurants into this array if they match our conditions
           let filterByHood = []
 
+          // if the neighborhoods that are selected match, put them in the array that we're going to set to state
           for (let i = 0; i < props.neighborhoodValue.length; i++) {
-
             for (let j = 0; j < todaysInfo.length; j++) {
-
-              console.log("todaysInfo inside the for loop")
-              console.log(todaysInfo)
-
-
               if (props.neighborhoodValue[i] === todaysInfo[j].neighborhood) {
-
-
                 filterByHood.push(todaysInfo[j])
               }
-
             }
           }
+
+          // sort by name
+          filterByHood = sortByName(filterByHood, props.nameSortValue)
+
+          // set state w our filtered list
           setTodaysRestaurants(filterByHood)
         } else {
-          console.log("hitting the else filter underneath the greater than 1 filter")
-          const filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue.toString())
+          let filterByHood = todaysInfo.filter(restaurant => restaurant.neighborhood === props.neighborhoodValue.toString())
+
+          filterByHood = sortByName(filterByHood, props.nameSortValue)
+
           setTodaysRestaurants(filterByHood)
         }
 
       }
+    }
+  }
+
+  const sortByPrice = (input) => {
+    console.log("sort by price")
+    if (parseFloat(input[0].price) < parseFloat(input[input.length - 1].price)) {
+
+      return input.sort(function (a, b) {
+        if (parseFloat(a.price) < parseFloat(b.price)) {
+          return 1
+        } else if (parseFloat(b.price) < parseFloat(a.price)) {
+          return -1
+        } else {
+          return 0
+        }
+      })
+
+
+    } else {
+
+      return input.sort(function (a, b) {
+        if (parseFloat(b.price) < parseFloat(a.price)) {
+          return 1
+        } else if (parseFloat(a.price) < parseFloat(b.price)) {
+          return -1
+        } else {
+          return 0
+        }
+      })
+    }
+  }
+
+  const sortByName = (input, input2) => {
+
+    if (input2) {
+
+      return input.sort(function (a, b) {
+        if (b.name.toLowerCase() < a.name.toLowerCase()) {
+          return 1
+        } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
+          return -1
+        } else {
+          return 0
+        }
+      })
+
+    } else {
+
+      return input.sort(function (a, b) {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+          return 1
+        } else if (b.name.toLowerCase() < a.name.toLowerCase()) {
+          return -1
+        } else {
+          return 0
+        }
+      })
+
     }
   }
 

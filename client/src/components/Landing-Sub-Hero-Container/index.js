@@ -18,9 +18,7 @@ function LandingSubHeroContainer(props) {
       <Container className="filter-wrapper">
 
         <Card
-
           className="landing-sub-head-card"
-
         >
 
           {/* Display unique day of the week */}
@@ -29,21 +27,27 @@ function LandingSubHeroContainer(props) {
 
         </Card>
         <Card
-
           className="landing-sub-head-card-button"
         >
+          <div
+            className="btn btn-primary btn-filter__controller"
+            onClick={() => props.priceClick()}
+          >Sort by Price</div>
 
           <LandingFilterDay
             buttonName={"Day of Week"}
             click={props.click}
           />
 
-
         </Card>
         <Card
-
           className="landing-sub-head-card-button"
         >
+
+          <div
+            className="btn btn-primary btn-filter__controller"
+            onClick={() => props.nameClick()}
+          >Sort by Name</div>
 
           <LandingFilterHood
             buttonName={"Neighborhood"}

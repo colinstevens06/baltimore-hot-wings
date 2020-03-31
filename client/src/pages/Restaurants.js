@@ -12,6 +12,8 @@ function RestaurantPage(props) {
 
   const [today, setToday] = useState(undefined)
   const [neighborhood, setNeighborhood] = useState(undefined)
+  const [priceSort, setPriceSort] = useState(undefined)
+  const [nameSort, setNameSort] = useState(true)
 
   useEffect(() => {
     const findDate = new Date().getDay()
@@ -19,14 +21,19 @@ function RestaurantPage(props) {
   }, [])
 
   const dayOfWeekFilter = input => {
-    console.log("day of week change")
     setToday(input)
   }
 
   const neighborHoodFilter = input => {
-    console.log("click heard at restaurants.js")
-    console.log(input)
     setNeighborhood(input)
+  }
+
+  const sortThePrice = () => {
+    setPriceSort(!priceSort)
+  }
+
+  const sortTheNames = () => {
+    setNameSort(!nameSort)
   }
 
   return (
@@ -38,7 +45,6 @@ function RestaurantPage(props) {
             <div className="wings-hero-image"></div>
             <Container>
               <HeroLanding />
-
             </Container>
           </Container>
 
@@ -48,13 +54,17 @@ function RestaurantPage(props) {
               <LandingSubHeroContainer
                 todayValue={today}
                 click={dayOfWeekFilter}
-                hoodFilter={neighborHoodFilter}
                 hoodValue={neighborhood}
+                hoodFilter={neighborHoodFilter}
+                priceClick={sortThePrice}
+                nameClick={sortTheNames}
               />
 
               <CardWrapper
                 todayValue={today}
                 neighborhoodValue={neighborhood}
+                nameSortValue={nameSort}
+                priceSortValue={priceSort}
               />
 
             </Container>

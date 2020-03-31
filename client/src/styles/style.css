@@ -390,6 +390,25 @@ td {
   color: #ffffff;
 }
 
+.btn-filter__controller {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.btn-primary:focus {
+  background-color: #d8623f;
+  border-color: #d8623f;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: #d8623f;
+  border-color: #d8623f;
+}
+
 .landing-sub-head-card, .landing-sub-head-card-button {
   background: transparent;
   height: 120px;

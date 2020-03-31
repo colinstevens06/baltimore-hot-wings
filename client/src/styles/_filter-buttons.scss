@@ -17,6 +17,23 @@
   }
 }
 
+.btn-filter__controller {
+  width: fit-content;
+  align-self: center;
+}
+
+.btn-primary {
+  &:focus {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  }
+}
+
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+
+}
 
 @media only screen and (max-width: 415px) {
 
