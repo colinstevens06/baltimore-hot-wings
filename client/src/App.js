@@ -15,23 +15,18 @@ export default class App extends Component {
   constructor() {
     super();
 
-    this.state = {
-      loggedInStatus: ""
-    }
+    this.state = {loggedInStatus: ''};
 
     this.handleLogin = this.handleLogin.bind(this);
   }
 
   componentDidMount() {
-    if (this.state.loggedInStatus === "") {
-      this.setState({
-        loggedInStatus: "NOT_LOGGED_IN"
-      })
+    if (this.state.loggedInStatus === '') {
+      this.setState({ loggedInStatus: "NOT_LOGGED_IN" })
     }
   }
 
   handleLogin(data) {
-    console.log('THIS IS', data);
     this.setState({
       loggedInStatus: data
     })
@@ -41,32 +36,10 @@ export default class App extends Component {
     return (
       <Router>
         <div>
+          <p className="d-none">{this.state.loggedInStatus}</p>
           <Switch>
-            <Route
-              exact
-              path={"/login"}
-              render={props => (
-                <LogIn
-                  {...props}
-                  handleLogin={this.handleLogin}
-                  loggedInStatus={this.loggedInStatus}
-                />
-              )}
-            >
-            </Route>
-            <Route
-              exact
-              path={"/admin"}
-              render={props => (
-                <>
-                  <Nav />
-                  <AdminForm
-                    {...props}
-                    loggedInStatus={this.loggedInStatus}
-                  />
-                </>
-              )}
-            />
+            <Route path="/login" render = {props => (<LogIn {...props} loggedInStatus={this.state.loggedInStatus} handleLogin={this.handleLogin} />) } />
+            <Route path="/admin" render = {props => (<><Nav /><AdminForm {...props} loggedInStatus={this.loggedInStatus} /></>)} />
             <Route exact path="/">
               <Nav />
               <RestaurantPage />
@@ -76,6 +49,7 @@ export default class App extends Component {
               <IndividualPage />
             </Route>
             <Route exact path="/spinner">
+              <Nav />
               <SpinnerPage />
             </Route>
             <Route>
@@ -84,7 +58,6 @@ export default class App extends Component {
           </Switch>
         </div>
       </Router>
-
     )
   }
 }

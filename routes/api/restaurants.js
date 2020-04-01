@@ -7,6 +7,14 @@ router.route("/")
   .get(restaurantsController.findAll)
 // .post(restaurantsController.create);
 
+// Matches with "/api/restaurants"
+router.route("/admin")
+  .get(restaurantsController.getStoreID);
+
+//return the state list for our drop down
+router.route("/dlState")
+  .get(restaurantsController.getStates);
+
 // route to login page
 router.post("/login", function(req, res) {
   //set a local variable up for usage.
@@ -26,7 +34,7 @@ router.post("/login", function(req, res) {
   }
 })
 
-// Matches with "/api/books/:id"
+// Matches with "/api/restaurants/:id"
 router
   .route("/:id")
   .get(restaurantsController.findById)
