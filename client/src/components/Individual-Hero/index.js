@@ -2,9 +2,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API.js";
 
-import { useParams } from "react-router-dom";
-
-
 // BOOTSTRAP
 import Jumbotron from 'react-bootstrap/Jumbotron'
 

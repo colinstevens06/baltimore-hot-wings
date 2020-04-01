@@ -1,0 +1,25 @@
+.landing-sub-head-card, .landing-sub-head-card-button {
+  background: transparent;
+  height: 120px;
+  box-shadow: none;
+  margin: 0;
+  width: 18rem;
+}
+
+@media only screen and (max-width: 415px) {
+  .landing-sub-head-card {
+    height: fit-content;
+    padding: 10px 0;
+  }
+
+  .landing-sub-head-card-button {
+    height: fit-content;
+    padding: 10px 0;
+    width: 9rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+}

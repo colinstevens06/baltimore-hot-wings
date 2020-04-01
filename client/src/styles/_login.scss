@@ -1,5 +1,10 @@
-body {
-    background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
+.wings-bg-image {
+    background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");    
+    height: 135vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 .bWingBorder {
@@ -40,4 +45,9 @@ body {
         color: white;
         transform: translateY(4px);
     }
+
+}
+
+.hero-image {
+  width: 300px;
 }

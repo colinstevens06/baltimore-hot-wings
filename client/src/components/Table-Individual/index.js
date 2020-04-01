@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API.js";
 
-import { useParams } from "react-router-dom";
-
 // layout
 import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'

@@ -9,7 +9,9 @@ function Navigation() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" variant="dark">
-        <img className="img-fluid nav-image" src={WingsLogo} alt="BMore Wings Logo" />
+        <a href='/'>
+          <img className="img-fluid nav-image" src={WingsLogo} alt="BMore Wings Logo" />
+        </a>
         <Navbar.Brand href="/">BMore Wing App</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 

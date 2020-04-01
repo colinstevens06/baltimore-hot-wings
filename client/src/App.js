@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+//add the pages
 import RestaurantPage from "./pages/Restaurants"
 import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
