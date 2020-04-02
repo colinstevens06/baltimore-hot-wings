@@ -7,9 +7,6 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 
 function LandingFilterHood(props) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState([]);
-
-  const handleChange = (val) => setValue(val);
 
   return (
 
