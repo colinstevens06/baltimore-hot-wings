@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { Container, Row, Form } from "react-bootstrap";
 import WingsLogo from '../assets/images/logos/bmore-wings-logo-large.png'
 import API from "../utils/API";
@@ -16,17 +17,6 @@ export default class LogIn extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.checkLogin = this.checkLogin.bind(this);
-  }
-
-  checkLogin() {
-    if (this.props.loggedInStatus === "LOGGED_IN") {
-      this.props.history.push('/admin');
-    }
-  }
-
-  componentDidMount() {
-    this.checkLogin();
   }
 
   // Handles updating component state when the user types into the input field
@@ -69,13 +59,14 @@ export default class LogIn extends Component {
   }
   //render our page
   render() {
+    if(this.state.loggedInStatus === "LOGGED_IN") {
+      return(<Redirect to="/admin" />)
+    }
+
     return (
-      <div>
-        <div className="wings-bg-image"></div>
-
-
+      <div className="bWingBack">
+        <p className="d-none">{this.state.loggedInStatus}</p>
         <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
-
           <Row className="justify-content-center">
             <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           </Row>
@@ -109,12 +100,8 @@ export default class LogIn extends Component {
               <button className="bWingButton" onClick={this.handleSubmit}>Submit</button>
             </Form>
           </Row>
-
         </Container>
       </div>
-
-
-
     );
   }
 }
