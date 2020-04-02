@@ -434,9 +434,75 @@ td {
   border-color: #d8623f;
 }
 
+.svg-inline--fa.fa-w-16 {
+  width: .75em;
+}
+
+.arrow-rotate-up {
+  -webkit-animation-name: rotateUp;
+          animation-name: rotateUp;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.arrow-rotate-down {
+  -webkit-animation-name: rotateDown;
+          animation-name: rotateDown;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .btn-primary:not(:disabled):not(.disabled).active {
   background-color: #d8623f;
   border-color: #d8623f;
+}
+
+@-webkit-keyframes rotateUp {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes rotateUp {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@-webkit-keyframes rotateDown {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateDown {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 .landing-sub-head-card, .landing-sub-head-card-button {
