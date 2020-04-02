@@ -3,6 +3,12 @@ import React from "react";
 import LandingFilterDay from "../Landing-Filter-Day"
 import LandingFilterHood from "../Landing-Filter-Neighborhood"
 
+// getting icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSort } from '@fortawesome/free-solid-svg-icons'
+import { faSortUp } from '@fortawesome/free-solid-svg-icons'
+import { faSortDown } from '@fortawesome/free-solid-svg-icons'
+
 // layout components
 import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container';
@@ -29,10 +35,18 @@ function LandingSubHeroContainer(props) {
         <Card
           className="landing-sub-head-card-button"
         >
+
+          {/* =============== SORT BY PRICE =============== */}
           <div
             className="btn btn-primary btn-filter__controller"
             onClick={() => props.priceClick()}
-          >Sort by Price</div>
+          >
+            Sort by Price {(props.priceClickValue === 0) ? (
+              <FontAwesomeIcon icon={faSort} />
+            ) : (props.priceClickValue === 1) ? (<FontAwesomeIcon icon={faSortDown} />)
+                : (<FontAwesomeIcon icon={faSortUp} />)
+            }
+          </div>
 
           <LandingFilterDay
             buttonName={"Day of Week"}
@@ -47,7 +61,11 @@ function LandingSubHeroContainer(props) {
           <div
             className="btn btn-primary btn-filter__controller"
             onClick={() => props.nameClick()}
-          >Sort by Name</div>
+          >Sort by Name {(props.priceClickValue === 1 || props.priceClickValue === 2) ? (
+            <FontAwesomeIcon icon={faSort} />
+          ) : (props.nameSortValue === true) ? (<FontAwesomeIcon icon={faSortDown} />)
+              : (<FontAwesomeIcon icon={faSortUp} />)
+            }</div>
 
           <LandingFilterHood
             buttonName={"Neighborhood"}

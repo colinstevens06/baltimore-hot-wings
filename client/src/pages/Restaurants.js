@@ -30,15 +30,19 @@ function RestaurantPage(props) {
   }
 
   const sortThePrice = () => {
-    setNameSort(false)
+    if ((priceSort + 1) % 3 === 0) {
+      setNameSort(true)
+    } else {
+      setNameSort(false)
+    }
     setPriceSort((priceSort + 1) % 3)
     setSortType("price")
   }
 
   const sortTheNames = () => {
-    setSortType("names")
     setPriceSort(0)
     setNameSort(!nameSort)
+    setSortType("names")
   }
 
   return (
@@ -62,7 +66,9 @@ function RestaurantPage(props) {
                 hoodValue={neighborhood}
                 hoodFilter={neighborHoodFilter}
                 priceClick={sortThePrice}
+                priceClickValue={priceSort}
                 nameClick={sortTheNames}
+                nameSortValue={nameSort}
               />
 
               <CardWrapper
