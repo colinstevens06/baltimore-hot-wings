@@ -17,7 +17,7 @@ function LandingFilterDay(props) {
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}
-
+        className="btn-filter__controller"
       >
         {props.buttonName} <FontAwesomeIcon
           icon={faArrowAltCircleRight}

@@ -61,9 +61,13 @@
   to {transform: rotate(0deg);};
 }
 
-
-
-
 @media only screen and (max-width: 415px) {
+  .btn-filter__controller {
+    font-size: smaller;
+  }
 
+  .svg-inline--fa.fa-w-16 {
+    width: .55em;
+    height: .55em;
+  }
 }

@@ -505,9 +505,19 @@ td {
   }
 }
 
+@media only screen and (max-width: 415px) {
+  .btn-filter__controller {
+    font-size: smaller;
+  }
+  .svg-inline--fa.fa-w-16 {
+    width: .55em;
+    height: .55em;
+  }
+}
+
 .landing-sub-head-card, .landing-sub-head-card-button {
   background: transparent;
-  height: 120px;
+  height: 130px;
   -webkit-box-shadow: none;
           box-shadow: none;
   margin: 0;

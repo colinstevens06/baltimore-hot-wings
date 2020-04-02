@@ -38,7 +38,7 @@ function LandingSubHeroContainer(props) {
 
           {/* =============== SORT BY PRICE =============== */}
           <div
-            className="btn btn-primary btn-filter__controller"
+            className="btn btn-primary btn-filter__controller mb-1"
             onClick={() => props.priceClick()}
           >
             Sort by Price {(props.priceClickValue === 0) ? (
@@ -58,8 +58,9 @@ function LandingSubHeroContainer(props) {
           className="landing-sub-head-card-button"
         >
 
+          {/* =============== SORT BY NAME =============== */}
           <div
-            className="btn btn-primary btn-filter__controller"
+            className="btn btn-primary btn-filter__controller mb-1"
             onClick={() => props.nameClick()}
           >Sort by Name {(props.priceClickValue === 1 || props.priceClickValue === 2) ? (
             <FontAwesomeIcon icon={faSort} />
