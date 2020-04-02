@@ -12,8 +12,9 @@ function RestaurantPage(props) {
 
   const [today, setToday] = useState(undefined)
   const [neighborhood, setNeighborhood] = useState(undefined)
-  const [priceSort, setPriceSort] = useState(undefined)
+  const [priceSort, setPriceSort] = useState(0)
   const [nameSort, setNameSort] = useState(true)
+  const [sortType, setSortType] = useState(undefined)
 
   useEffect(() => {
     const findDate = new Date().getDay()
@@ -29,10 +30,14 @@ function RestaurantPage(props) {
   }
 
   const sortThePrice = () => {
-    setPriceSort(!priceSort)
+    setNameSort(false)
+    setPriceSort((priceSort + 1) % 3)
+    setSortType("price")
   }
 
   const sortTheNames = () => {
+    setSortType("names")
+    setPriceSort(0)
     setNameSort(!nameSort)
   }
 
@@ -65,6 +70,7 @@ function RestaurantPage(props) {
                 neighborhoodValue={neighborhood}
                 nameSortValue={nameSort}
                 priceSortValue={priceSort}
+                sortTypeValue={sortType}
               />
 
             </Container>
