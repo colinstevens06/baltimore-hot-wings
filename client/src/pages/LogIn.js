@@ -59,14 +59,17 @@ export default class LogIn extends Component {
   }
   //render our page
   render() {
-    if(this.state.loggedInStatus === "LOGGED_IN") {
-      return(<Redirect to="/admin" />)
+    if (this.state.loggedInStatus === "LOGGED_IN") {
+      return (<Redirect to="/admin" />)
     }
 
     return (
+
       <div className="bWingBack">
+        <div className="wings-bg-image"></div>
+
         <p className="d-none">{this.state.loggedInStatus}</p>
-        <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
+        <Container className="bWingBorder my-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
           <Row className="justify-content-center">
             <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           </Row>
