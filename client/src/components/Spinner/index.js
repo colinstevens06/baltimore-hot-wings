@@ -85,7 +85,8 @@ console.log(this.state.Restaurants)
       
 
 
-        <div>
+        <div className="background">
+        
           {this.state.Restaurants &&
           <div>
           <Modal show={this.state.modal}>
@@ -104,6 +105,7 @@ console.log(this.state.Restaurants)
         </Modal>
         <Row>
         <Col>
+        <div classname="white-bg">
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
           <h1 className="main-header">Chicken Spinner!</h1>
@@ -111,10 +113,10 @@ console.log(this.state.Restaurants)
           <h2 className="sub-headline">Too many choices? Can't make up your mind?</h2>
           <h2 className="sub-headline">Want to try a new spot but can't decide where?</h2>
           <h2 className="sub-headline">     </h2>
-
+<br/>
           <h2 className="sub-headline">Let the chicken gods decide...</h2>
           <h3 className="sub-headline">just click the wheel and find your deal...</h3>
-
+</div>
           </div>
         </Col>
       </Row>

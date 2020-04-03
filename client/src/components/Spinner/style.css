@@ -112,6 +112,15 @@
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
   }
+  .background {
+    background-image: url("../../assets/images/hero/landing-hero-desktop.jpg")
+
+  }
+
+  .white-bg {
+    background-color: white;
+    opacity: 0.8
+  }
   
   /* Background de l'élément = triangle rose plus clair */
   .wheel-item:before {
