@@ -6,6 +6,17 @@
   background-color: #1c53b9;
 }
 
+.background-image-wings {
+  background: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: absolute;
+  z-index: -1;
+}
+
 a {
   color: white;
 }
@@ -281,6 +292,10 @@ nav {
   font-size: 1.2rem;
 }
 
+.little-op {
+  opacity: .8;
+}
+
 .table {
   width: 65%;
   margin-left: auto;
@@ -322,10 +337,10 @@ td {
 }
 
 .wings-bg-image {
-  background-image: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
-  height: 135vh;
-  width: 100vw;
-  position: absolute;
+  background-image: url("../assets/images/hero/chicken-wings-full-background.jpg");
+  height: 100vh;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: -1;
 }
@@ -411,9 +426,104 @@ td {
   color: #ffffff;
 }
 
+.btn-filter__controller {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.btn-primary:focus {
+  background-color: #d8623f;
+  border-color: #d8623f;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: .75em;
+}
+
+.arrow-rotate-up {
+  -webkit-animation-name: rotateUp;
+          animation-name: rotateUp;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.arrow-rotate-down {
+  -webkit-animation-name: rotateDown;
+          animation-name: rotateDown;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: #d8623f;
+  border-color: #d8623f;
+}
+
+@-webkit-keyframes rotateUp {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes rotateUp {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@-webkit-keyframes rotateDown {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateDown {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .btn-filter__controller {
+    font-size: smaller;
+  }
+  .svg-inline--fa.fa-w-16 {
+    width: .55em;
+    height: .55em;
+  }
+}
+
 .landing-sub-head-card, .landing-sub-head-card-button {
   background: transparent;
-  height: 120px;
+  height: 130px;
   -webkit-box-shadow: none;
           box-shadow: none;
   margin: 0;

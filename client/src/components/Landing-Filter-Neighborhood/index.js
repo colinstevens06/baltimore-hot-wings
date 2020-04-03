@@ -5,11 +5,12 @@ import Collapse from 'react-bootstrap/Collapse'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 
+// font awesome arrow
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
+
 function LandingFilterHood(props) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState([]);
-
-  const handleChange = (val) => setValue(val);
 
   return (
 
@@ -18,8 +19,12 @@ function LandingFilterHood(props) {
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}
+        className="btn-filter__controller"
       >
-        {props.buttonName}
+        {props.buttonName} <FontAwesomeIcon
+          icon={faArrowAltCircleRight}
+          className={open ? ("arrow-rotate-up") : ("arrow-rotate-down")}
+        />
       </Button>
       <Collapse className="mt-3" in={open}>
         <div id="example-collapse-text">

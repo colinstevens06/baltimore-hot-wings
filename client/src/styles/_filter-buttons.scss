@@ -17,7 +17,57 @@
   }
 }
 
+.btn-filter__controller {
+  width: fit-content;
+  align-self: center;
+}
+
+.btn-primary {
+  &:focus {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  }
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: .75em;
+}
+
+.arrow-rotate-up {
+  animation-name: rotateUp;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+.arrow-rotate-down {
+  animation-name: rotateDown;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  }
+
+
+@keyframes rotateUp {
+  from {transform: rotate(0deg);};
+  to {transform: rotate(90deg);};
+}
+
+@keyframes rotateDown {
+  from {transform: rotate(90deg);};
+  to {transform: rotate(0deg);};
+}
 
 @media only screen and (max-width: 415px) {
+  .btn-filter__controller {
+    font-size: smaller;
+  }
 
+  .svg-inline--fa.fa-w-16 {
+    width: .55em;
+    height: .55em;
+  }
 }

@@ -16,7 +16,7 @@ export default class App extends Component {
   constructor() {
     super();
 
-    this.state = {loggedInStatus: ''};
+    this.state = { loggedInStatus: '' };
 
     this.handleLogin = this.handleLogin.bind(this);
   }
@@ -38,19 +38,17 @@ export default class App extends Component {
       <Router>
         <div>
           <p className="d-none">{this.state.loggedInStatus}</p>
+          <Nav />
           <Switch>
-            <Route path="/login" render = {props => (<LogIn {...props} loggedInStatus={this.state.loggedInStatus} handleLogin={this.handleLogin} />) } />
-            <Route path="/admin" render = {props => (<><Nav /><AdminForm {...props} loggedInStatus={this.loggedInStatus} /></>)} />
+            <Route path="/login" render={props => (<LogIn {...props} loggedInStatus={this.state.loggedInStatus} handleLogin={this.handleLogin} />)} />
+            <Route path="/admin" render={props => (<><AdminForm {...props} loggedInStatus={this.loggedInStatus} /></>)} />
             <Route exact path="/">
-              <Nav />
               <RestaurantPage />
             </Route>
             <Route exact path="/restaurants/:id">
-              <Nav />
               <IndividualPage />
             </Route>
             <Route exact path="/spinner">
-              <Nav />
               <SpinnerPage />
             </Route>
             <Route>

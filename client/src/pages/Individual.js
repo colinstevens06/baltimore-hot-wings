@@ -12,11 +12,17 @@ function IndividualPage() {
 
   return (
     <div>
+      <div className="wings-bg-image"></div>
+
       <Container>
 
+
         <IndividualHero id={id} />
-        <RestaurantDropdown />
-        <StoreInfo id={id} />
+        <Container className="bg-light py-3 little-op">
+          <RestaurantDropdown />
+          <StoreInfo id={id} />
+
+        </Container>
       </Container>
     </div>
   )

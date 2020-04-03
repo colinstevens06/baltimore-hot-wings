@@ -12,6 +12,17 @@ $secondaryColorDark: #1c53b9;
   background-color: $secondaryColorDark;
 }
 
+.background-image-wings {
+  background: url("../assets/images/logos/chicken-wings-2210462_1920.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: absolute;
+  z-index: -1;
+}
+
 a {
   color: white;
   &:hover {
