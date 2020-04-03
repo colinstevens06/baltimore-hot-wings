@@ -23,6 +23,7 @@ export default class Wheel extends React.Component {
       selectedItem: null,
 modal: false,
 // pass restaurants down as a prop. Use restaurants object
+// set state with class components
 Restaurants: ["Cardinal Tavern", "Mahaffey's Pub", "Sharky's Bar & Grill", "Hudson Street Stackhouse", "Rocket to Venus", "Frazier's on the Ave", "DogWatch Tavern", "The Horse You Came In On Saloon", "Don't Know Tavern", "Nobles Bar & Grill", ]
     };
     this.selectItem = this.selectItem.bind(this);
