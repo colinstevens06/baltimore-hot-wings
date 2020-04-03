@@ -60,12 +60,14 @@ Restaurants: undefined
   modal(){
     const time = this.state.Restaurants[this.state.selectedItem]
       this.setState({modal:true});
+
         
         // alert (time);
   }
 
   render() {
     
+    // const urlMaker = "/restaurants/" + {this.state.Restaurants[this.state.selectedItem]._id}
     const { selectedItem } = this.state;
     // const { items } = this.props;
     this.getRestaurantFunction();
@@ -80,6 +82,7 @@ console.log(this.state.Restaurants)
     };
 
     return (
+      
 
 
         <div>
@@ -88,11 +91,11 @@ console.log(this.state.Restaurants)
           <Modal show={this.state.modal}>
     
           
-          <Modal.Header>Tonight you should eat at:</Modal.Header>
+          <Modal.Header>So why don't you try:</Modal.Header>
           <Modal.Body>
       {this.state.selectedItem &&
-      <Container fluid className="py-4 dark-bg">
-          {this.state.Restaurants[this.state.selectedItem].name}
+      <Container fluid className="py-4 bg-primary">
+        <a href={"/restaurants/" + this.state.Restaurants[this.state.selectedItem]._id}>{this.state.Restaurants[this.state.selectedItem].name}</a> 
           </Container>
         }
       </Modal.Body>
@@ -103,9 +106,14 @@ console.log(this.state.Restaurants)
         <Col>
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
-          <h1 className="main-header">WINNER WINNER</h1>
-          <h1 className="main-header">CHICKEN SPINNER</h1>
-          <h2 className="sub-headline">Where should you eat tonight?</h2>
+          <h1 className="main-header">Chicken Spinner!</h1>
+          
+          <h2 className="sub-headline">Too many choices? Can't make up your mind?</h2>
+          <h2 className="sub-headline">Want to try a new spot but can't decide where?</h2>
+          <h2 className="sub-headline">     </h2>
+
+          <h2 className="sub-headline">Let the chicken gods decide...</h2>
+          <h3 className="sub-headline">just click the wheel and find your deal...</h3>
 
           </div>
         </Col>
