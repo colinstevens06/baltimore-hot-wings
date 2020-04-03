@@ -33,5 +33,9 @@ export default {
 
   getStateList: function() {
     return axios.get("/api/restaurants/dlState");
+  },
+
+  updateStoreInfo: function(id, storeData) {
+    return axios.put("/api/restaurants/" + id, storeData)
   }
 };

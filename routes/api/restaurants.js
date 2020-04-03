@@ -38,7 +38,7 @@ router.post("/login", function (req, res) {
 router
   .route("/:id")
   .get(restaurantsController.findById)
-// .put(restaurantsController.update)
+  .put(restaurantsController.update)
 //   .delete(restaurantsController.remove);
 
 module.exports = router;
