@@ -64,7 +64,7 @@ export default class LogIn extends Component {
     }
 
     return (
-      <div className="bWingBack">
+      <div className="wings-bg-image">
         <p className="d-none">{this.state.loggedInStatus}</p>
         <Container className="bWingBorder mt-5 pb-5" style={{ width: "600px", backgroundColor: "white" }}>
           <Row className="justify-content-center">

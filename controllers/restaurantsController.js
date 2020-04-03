@@ -15,12 +15,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
-  remove: function (req, res) {
+  update: (req, res) => {
     db.Restaurant
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+        .findOneAndUpdate({_id: req.params.id}, req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
   },
   getStoreID: function (req, res) {
     let storeResponse = {
