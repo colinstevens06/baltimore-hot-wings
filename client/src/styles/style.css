@@ -366,8 +366,8 @@ td {
   text-align: center;
 }
 
-.fa-w-16 {
-  font-size: 2rem;
+.fa-drumstick-bite {
+  font-size: 1.5rem;
   margin-left: .5rem;
 }
 
@@ -488,8 +488,8 @@ td {
   border-color: #d8623f;
 }
 
-.svg-inline--fa.fa-w-16 {
-  width: .75em;
+.fa-arrow-alt-circle-right {
+  width: .95em;
 }
 
 .arrow-rotate-up {
@@ -563,7 +563,7 @@ td {
   .btn-filter__controller {
     font-size: smaller;
   }
-  .svg-inline--fa.fa-w-16 {
+  .fa-arrow-alt-circle-right {
     width: .55em;
     height: .55em;
   }
