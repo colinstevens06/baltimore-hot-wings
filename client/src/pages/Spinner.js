@@ -14,15 +14,14 @@ function SpinnerPage(props) {
     <div>
 
 
-      <div>
-
-
+      
+<div className="wings-bg-image"></div>
        
         
   <Wheel />     
 
 
-      </div>
+     
 
     </div>
   );

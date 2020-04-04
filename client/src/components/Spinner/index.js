@@ -2,6 +2,7 @@ import React, {useEffect, setState} from 'react';
 import WingsLogo from '../../assets/images/logos/bmore-wings-logo-large.png'
 
 
+
 //layout
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -88,7 +89,7 @@ console.log(this.state.Restaurants)
       
 
 
-        <div className="background">
+        <div>
         
           {this.state.Restaurants &&
           <div>
@@ -98,7 +99,7 @@ console.log(this.state.Restaurants)
           <Modal.Header>So why don't you try:</Modal.Header>
           <Modal.Body>
       {this.state.selectedItem &&
-      <Container fluid className="py-4 bg-primary">
+      <Container fluid className="py-4 dark-bg">
         <a href={"/restaurants/" + this.state.Restaurants[this.state.selectedItem]._id}>{this.state.Restaurants[this.state.selectedItem].name}</a> 
           </Container>
         }
@@ -106,6 +107,7 @@ console.log(this.state.Restaurants)
       
           <Modal.Footer><button onClick={hideModal}>Cancel</button></Modal.Footer>
         </Modal>
+        
         <Row>
         <Col>
         <div className="white-bg">
