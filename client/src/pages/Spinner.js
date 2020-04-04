@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 
 // importing components
@@ -14,14 +14,14 @@ function SpinnerPage(props) {
     <div>
 
 
-      
-<div className="wings-bg-image"></div>
-       
-        
-  <Wheel />     
+
+      <div className="wings-bg-image"></div>
 
 
-     
+      <Wheel />
+
+
+
 
     </div>
   );
