@@ -52,7 +52,7 @@ function RestaurantPage(props) {
           <Container fluid className="hero-container">
 
             <div className="wings-hero-image"></div>
-            <Container>
+            <Container style={{ maxWidth: 900 }}>
               <HeroLanding />
             </Container>
           </Container>

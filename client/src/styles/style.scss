@@ -23,6 +23,10 @@ $secondaryColorDark: #1c53b9;
   z-index: -1;
 }
 
+.individual-wrapper {
+  max-width: 825px;
+}
+
 a {
   color: white;
   &:hover {
