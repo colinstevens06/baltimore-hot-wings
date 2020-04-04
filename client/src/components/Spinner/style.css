@@ -1,6 +1,6 @@
 :root {
     --wheel-font: 'Lato', 'Quicksand', sans-serif;
-    --wheel-size: 400px;
+    --wheel-size: 500px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
     --wheel-color: #f06429;
@@ -111,6 +111,15 @@
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
+  }
+  .background {
+    background-image: url("../../assets/images/hero/landing-hero-desktop.jpg")
+
+  }
+
+  .white-bg {
+    background-color: white;
+    opacity: 0.8
   }
   
   /* Background de l'élément = triangle rose plus clair */
