@@ -105,7 +105,7 @@ console.log(this.state.Restaurants)
         </Modal>
         <Row>
         <Col>
-        <div classname="white-bg">
+        <div className="white-bg">
           <img className="img-fluid hero-image" src={WingsLogo} alt="BMore Wings Logo" />
           <div className="d-inline-block main-text-box">
           <h1 className="main-header">Chicken Spinner!</h1>
