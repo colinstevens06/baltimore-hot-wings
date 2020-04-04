@@ -14,11 +14,11 @@ function IndividualPage() {
     <div>
       <div className="wings-bg-image"></div>
 
-      <Container>
+      <Container className="individual-wrapper">
 
 
         <IndividualHero id={id} />
-        <Container className="bg-light py-3 little-op">
+        <Container className="py-3 little-op">
           <RestaurantDropdown />
           <StoreInfo id={id} />
 
