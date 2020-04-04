@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, setState} from 'react';
 import WingsLogo from '../../assets/images/logos/bmore-wings-logo-large.png'
+
 
 //layout
 import Row from 'react-bootstrap/Row'
@@ -15,6 +16,8 @@ import API from "../../utils/API.js";
 
 
 import './style.css';
+
+// set state with class component
 
 export default class Wheel extends React.Component {
   constructor(props) {
@@ -40,7 +43,7 @@ Restaurants: undefined
         console.log(this.state.Restaurants)
       })
       .catch(err => console.log(err))
-  }
+  };
   
   selectItem() {
     if (this.state.selectedItem === null) {
