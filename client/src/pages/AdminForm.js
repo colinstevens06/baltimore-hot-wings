@@ -136,79 +136,85 @@ export default class AdminForm extends Component {
     }
 
     render() {
-        return (
-            <div className="wings-bg-image-form pt-4">
-                <Container>
-                    <h1 className="main-header white-bg mt-0">{this.state.storeData.name}</h1>
-                    <Row className="justify-content-center">
-                        <Accordion className="bWingRow bg-light justfy-content-center" defaultActiveKey="0">
-                            <Card style={{ width: "50vw", height: "auto" }}>
-                                <Card.Header>
-                                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Store Information
+        if (this.state.storeData) {
+            return (
+                <div className="wings-bg-image-form pt-4">
+                    <Container>
+                        <h1 className="main-header white-bg mt-0">{this.state.storeData.name}</h1>
+                        <Row className="justify-content-center">
+                            <Accordion className="bWingRow bg-light justfy-content-center" defaultActiveKey="0">
+                                <Card style={{ width: "50vw", height: "auto" }}>
+                                    <Card.Header>
+                                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                            Store Information
                                 </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="0">
-                                        <Card.Body>
-                                            <StoreInfo2
-                                                storeData={this.state.storeData}
-                                                stateList={this.state.stateList}
-                                                handleCityUpdate={this.handleCityUpdate}
-                                                handleNeighborhoodUpdate={this.handleNeighborhoodUpdate}
-                                                handleZipUpdate={this.handleZipUpdate}
-                                            />
-                                        </Card.Body>
-                                    </Accordion.Collapse>
-                                </Card.Header>
-                            </Card>
-                            <Card style={{ width: "50vw", height: "auto" }}>
-                                <Card.Header>
-                                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                        Store Hours
+                                        <Accordion.Collapse eventKey="0">
+                                            <Card.Body>
+                                                <StoreInfo2
+                                                    storeData={this.state.storeData}
+                                                    stateList={this.state.stateList}
+                                                    handleCityUpdate={this.handleCityUpdate}
+                                                    handleNeighborhoodUpdate={this.handleNeighborhoodUpdate}
+                                                    handleZipUpdate={this.handleZipUpdate}
+                                                />
+                                            </Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card.Header>
+                                </Card>
+                                <Card style={{ width: "50vw", height: "auto" }}>
+                                    <Card.Header>
+                                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                                            Store Hours
                                 </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="1">
-                                        <Card.Body>
-                                            <StoreHours2
-                                                storeData={this.state.storeData}
-                                                handleHoursUpdate={this.handleHoursUpdate}
-                                            />
-                                        </Card.Body>
-                                    </Accordion.Collapse>
-                                </Card.Header>
-                            </Card>
-                            <Card style={{ width: "50vw", height: "auto" }}>
-                                <Card.Header>
-                                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                                        Wing Prices
+                                        <Accordion.Collapse eventKey="1">
+                                            <Card.Body>
+                                                <StoreHours2
+                                                    storeData={this.state.storeData}
+                                                    handleHoursUpdate={this.handleHoursUpdate}
+                                                />
+                                            </Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card.Header>
+                                </Card>
+                                <Card style={{ width: "50vw", height: "auto" }}>
+                                    <Card.Header>
+                                        <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                                            Wing Prices
                                 </Accordion.Toggle>
-                                    <Accordion.Collapse eventKey="2">
-                                        <Card.Body>
-                                            <WingPrice2
-                                                storeData={this.state.storeData}
-                                                handlePriceChange={this.handlePriceChange}
-                                                handleCountChange={this.handleCountChange}
-                                                handleSpecialChange={this.handleSpecialChange}
-                                            />
-                                        </Card.Body>
-                                    </Accordion.Collapse>
-                                </Card.Header>
-                            </Card>
-                            <Card style={{ width: "50vw", height: "auto" }}>
-                                <Card.Header>
-                                    <Button
-                                        className="justify-content-center bWingButton"
-                                        variant="primary"
-                                        type="submit"
-                                        onClick={this.onSubmit}
-                                    >Save Store Data </Button>
-                                </Card.Header>
-                                <Card.Body className={this.state.saveClass} id="saveBody">
-                                    <Card.Text className="text-muted" id="saveText">{this.state.saveMessage}</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Accordion>
-                    </Row>
-                </Container>
-            </div>
-        )
+                                        <Accordion.Collapse eventKey="2">
+                                            <Card.Body>
+                                                <WingPrice2
+                                                    storeData={this.state.storeData}
+                                                    handlePriceChange={this.handlePriceChange}
+                                                    handleCountChange={this.handleCountChange}
+                                                    handleSpecialChange={this.handleSpecialChange}
+                                                />
+                                            </Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card.Header>
+                                </Card>
+                                <Card style={{ width: "50vw", height: "auto" }}>
+                                    <Card.Header>
+                                        <Button
+                                            className="justify-content-center bWingButton"
+                                            variant="primary"
+                                            type="submit"
+                                            onClick={this.onSubmit}
+                                        >Save Store Data </Button>
+                                    </Card.Header>
+                                    <Card.Body className={this.state.saveClass} id="saveBody">
+                                        <Card.Text className="text-muted" id="saveText">{this.state.saveMessage}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Accordion>
+                        </Row>
+                    </Container>
+                </div>
+            )
+        } else {
+            return (
+                <p>Loading...</p>
+            )
+        }
     };
 }
