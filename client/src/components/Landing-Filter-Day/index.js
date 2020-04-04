@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
 
+// font awesome arrow
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
+
 function LandingFilterDay(props) {
   const [open, setOpen] = useState(false);
 
@@ -13,8 +17,12 @@ function LandingFilterDay(props) {
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}
+        className="btn-filter__controller"
       >
-        {props.buttonName}
+        {props.buttonName} <FontAwesomeIcon
+          icon={faArrowAltCircleRight}
+          className={open ? ("arrow-rotate-up") : ("arrow-rotate-down")}
+        />
       </Button>
       <Collapse className="mt-3" in={open}>
         <div id="example-collapse-text">

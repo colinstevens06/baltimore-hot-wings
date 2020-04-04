@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+//add the pages
 import RestaurantPage from "./pages/Restaurants"
 import IndividualPage from "./pages/Individual"
 import NoMatch from "./pages/NoMatch"
@@ -15,23 +16,18 @@ export default class App extends Component {
   constructor() {
     super();
 
-    this.state = {
-      loggedInStatus: ""
-    }
+    this.state = { loggedInStatus: '' };
 
     this.handleLogin = this.handleLogin.bind(this);
   }
 
   componentDidMount() {
-    if (this.state.loggedInStatus === "") {
-      this.setState({
-        loggedInStatus: "NOT_LOGGED_IN"
-      })
+    if (this.state.loggedInStatus === '') {
+      this.setState({ loggedInStatus: "NOT_LOGGED_IN" })
     }
   }
 
   handleLogin(data) {
-    console.log('THIS IS', data);
     this.setState({
       loggedInStatus: data
     })
@@ -41,45 +37,18 @@ export default class App extends Component {
     return (
       <Router>
         <div>
+          <p className="d-none">{this.state.loggedInStatus}</p>
+          <Nav />
           <Switch>
-            <Route
-              exact
-              path={"/login"}
-              render={props => (
-                <>
-                  <Nav />
-                  <LogIn
-                    {...props}
-                    handleLogin={this.handleLogin}
-                    loggedInStatus={this.loggedInStatus}
-                  />
-                </>
-              )}
-            >
-            </Route>
-            <Route
-              exact
-              path={"/admin"}
-              render={props => (
-                <>
-                  <Nav />
-                  <AdminForm
-                    {...props}
-                    loggedInStatus={this.loggedInStatus}
-                  />
-                </>
-              )}
-            />
+            <Route path="/login" render={props => (<LogIn {...props} loggedInStatus={this.state.loggedInStatus} handleLogin={this.handleLogin} />)} />
+            <Route path="/admin" render={props => (<><AdminForm {...props} loggedInStatus={this.loggedInStatus} /></>)} />
             <Route exact path="/">
-              <Nav />
               <RestaurantPage />
             </Route>
             <Route exact path="/restaurants/:id">
-              <Nav />
               <IndividualPage />
             </Route>
             <Route exact path="/spinner">
-              <Nav />
               <SpinnerPage />
             </Route>
             <Route>
@@ -88,7 +57,6 @@ export default class App extends Component {
           </Switch>
         </div>
       </Router>
-
     )
   }
 }

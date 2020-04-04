@@ -12,6 +12,9 @@ function RestaurantPage(props) {
 
   const [today, setToday] = useState(undefined)
   const [neighborhood, setNeighborhood] = useState(undefined)
+  const [priceSort, setPriceSort] = useState(0)
+  const [nameSort, setNameSort] = useState(true)
+  const [sortType, setSortType] = useState(undefined)
 
   useEffect(() => {
     const findDate = new Date().getDay()
@@ -19,14 +22,27 @@ function RestaurantPage(props) {
   }, [])
 
   const dayOfWeekFilter = input => {
-    console.log("day of week change")
     setToday(input)
   }
 
   const neighborHoodFilter = input => {
-    console.log("click heard at restaurants.js")
-    console.log(input)
     setNeighborhood(input)
+  }
+
+  const sortThePrice = () => {
+    if ((priceSort + 1) % 3 === 0) {
+      setNameSort(true)
+    } else {
+      setNameSort(false)
+    }
+    setPriceSort((priceSort + 1) % 3)
+    setSortType("price")
+  }
+
+  const sortTheNames = () => {
+    setPriceSort(0)
+    setNameSort(!nameSort)
+    setSortType("names")
   }
 
   return (
@@ -38,7 +54,6 @@ function RestaurantPage(props) {
             <div className="wings-hero-image"></div>
             <Container>
               <HeroLanding />
-
             </Container>
           </Container>
 
@@ -48,13 +63,20 @@ function RestaurantPage(props) {
               <LandingSubHeroContainer
                 todayValue={today}
                 click={dayOfWeekFilter}
-                hoodFilter={neighborHoodFilter}
                 hoodValue={neighborhood}
+                hoodFilter={neighborHoodFilter}
+                priceClick={sortThePrice}
+                priceClickValue={priceSort}
+                nameClick={sortTheNames}
+                nameSortValue={nameSort}
               />
 
               <CardWrapper
                 todayValue={today}
                 neighborhoodValue={neighborhood}
+                nameSortValue={nameSort}
+                priceSortValue={priceSort}
+                sortTypeValue={sortType}
               />
 
             </Container>

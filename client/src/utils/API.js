@@ -25,5 +25,17 @@ export default {
     catch (err) {
         return 'fail'
     }
+  },
+
+  getAdminStoreID: function() {
+    return axios.get("/api/restaurants/admin");
+  },
+
+  getStateList: function() {
+    return axios.get("/api/restaurants/dlState");
+  },
+
+  updateStoreInfo: function(id, storeData) {
+    return axios.put("/api/restaurants/" + id, storeData)
   }
 };
