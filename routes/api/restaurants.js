@@ -39,6 +39,5 @@ router
   .route("/:id")
   .get(restaurantsController.findById)
   .put(restaurantsController.update)
-//   .delete(restaurantsController.remove);
 
 module.exports = router;
