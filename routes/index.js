@@ -10,8 +10,6 @@ router.use(function (req, res) {
   // use this for heroku
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 
-  // use this locally
-  // res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
 module.exports = router;
